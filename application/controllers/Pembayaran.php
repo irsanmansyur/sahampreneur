@@ -53,7 +53,7 @@ class Pembayaran extends MY_Controller
     }
 
     $config['allowed_types'] = 'gif|jpg|jpeg|png';
-    $config['max_size']      = '2048';
+    $config['max_size']      = '10480';
     $config['upload_path'] = './assets/img/pembayaran/';
     $this->load->library('upload', $config);
 
