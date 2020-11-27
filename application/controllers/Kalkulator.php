@@ -181,10 +181,10 @@ class Kalkulator extends MY_Controller
       $endYear = substr($this->input->post("end_date"), 0, 4);
       $endValue = $this->input->post("end_date_value");
 
-      $years =  $endYear - $startYear;
+      $yearss =  $endYear - $startYear;
 
       $data["growthRate"] = number_format(($endValue - $startValue) / $startValue * 100, 2);
-      $data["compoundAnnual"] = number_format(((pow(($endValue / $startValue), (1 / $years))) - 1) * 100, 2);
+      $data["compoundAnnual"] = number_format(((pow(($endValue / $startValue), (1 / $yearss))) - 1) * 100, 2);
     }
     $this->template->load('public', 'kalkulator/index', array_merge($data, compact(["yearss"])));
   }
