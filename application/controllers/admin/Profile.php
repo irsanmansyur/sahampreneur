@@ -25,7 +25,7 @@ class Profile extends Admin_Controller
           'is_unique'     => '%s ini sudah terdaftar.'
         )
       );
-    } 
+    }
     $this->form_validation->set_rules("name", "Name User", "required");
     if ($this->input->post("jabatan"))
       $this->form_validation->set_rules("jabatan", "User Jabatan", "required|min_length[4]");
@@ -48,7 +48,8 @@ class Profile extends Admin_Controller
       }
       if ($this->input->post("password") != "")
         $dt['password'] =  password_hash($this->input->post("password"), PASSWORD_DEFAULT);
-      $dt['profile'] = $this->upload($user->profile);
+
+      $dt['profile'] =  $this->upload($user->profile);
       $id = $user->id;
       $this->db->where('id', $id)->update("users", $dt);
       $this->session->set_flashdata('success', "profile Berhasil di ubah.!");
@@ -60,7 +61,7 @@ class Profile extends Admin_Controller
 
   private function upload($filename = 'default.jpg')
   {
-    if ($_FILES['gambar']['name']) {
+    if (isset($_FILES['gambar']) && $_FILES['gambar']['name']) {
       $config['allowed_types'] = 'gif|jpg|jpeg|png';
       $config['max_size']      = '2048';
       $config['upload_path'] = './assets/img/profile/';
