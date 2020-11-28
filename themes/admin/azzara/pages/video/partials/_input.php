@@ -1,89 +1,45 @@
-<center>
-  <?php if (isset($user_edit->name_rules) && $user_edit->name_rules == "Admin") : ?>
-    <div class="card-avatar">
-      <input type="file" name="gambar" id="imagechange" class="d-none" />
-      <a href="#pablo" id="changePhoto">
-        <img class="img thumbnail rounded-circle" style="width: 100px;height:100px;" src="<?= $user_edit->takeProfile() ?>">
-      </a>
-      <h3 class="mt-4">Profile Picture</h3>
-    <?php endif; ?>
-</center>
-<div class="row mt-3">
-  <div class="col-md-6">
-    <div class="form-group form-group-default">
-      <label>Name</label>
-      <input type="text" class="form-control" name="name" placeholder="Name" value="<?= set_value("name", null) ?? $user_edit->name ?? ""; ?>">
-    </div>
-    <?= form_error("name", "<div class='text-danger pl-2'>", "</div>"); ?>
-
-  </div>
-  <div class="col-md-6">
-    <div class="form-group form-group-default">
-      <label>Username</label>
-      <input type="text" class="form-control" name="username" placeholder="Name" value="<?= set_value("username", null) ?? $user_edit->username ?? ""; ?>">
-    </div>
-    <?= form_error("username", "<div class='text-danger pl-2'>", "</div>"); ?>
-  </div>
+<div class="form-group">
+  <label for="kategori_id">Kategori Video</label>
+  <?php if (isset($kategori) && $kategori) : ?>
+    <input hidden value="<?= $kategori->id; ?>" name="kategori_id">
+    <input readonly value="<?= $kategori->name; ?>" class="form-control" />
+  <?php else :; ?>
+    <select class="form-control" name="kategori_id" id="kategori_id">
+      <option value="">Select Kategori</option>
+      <?php foreach ($kategories as $kategori) : ?>
+        <option value="<?= $kategori->id; ?>" <?= set_value("kategori_id") ==  $kategori->id ? " selected" : ($video->kategori_id ==  $kategori->id ? " selected" : ''); ?>><?= $kategori->name; ?></option>
+      <?php endforeach; ?>
+    </select>
+  <?php endif; ?>
+  <?= form_error("kategori_id", "<div class='danger text-danger'>", "</div>"); ?>
 
 </div>
-<div class="row mt-3">
-  <div class="col-md-6">
-    <div class="form-group form-group-default">
-      <label>status</label>
-      <select class="form-control" id="status" name="status">
-        <option disable>Select Status</option>
-        <option value="1" <?= set_value("status") == 1  ? "selected" : ''; ?>>aktif</option>
-        <option value="0" <?= set_value("status") == 0 ? "selected" : ''; ?>>Non Aktif</option>
-      </select>
-    </div>
-    <?= form_error("status", "<div class='text-danger pl-2'>", "</div>"); ?>
-
-  </div>
-  <div class="col-md-6">
-    <div class="form-group form-group-default">
-      <label>Pilih level Admin</label>
-      <select class="form-control" id='role_id' name='role_id'>
-        <option disabled selected>Pilih Level</option>
-        <?php foreach ($rules as $role) : ?>
-          <option value="<?= $role->id; ?>" <?= set_value("role_id") == $role->id ? "selected" : ($user_edit->role_id == $role->id ? "selected" : ''); ?>><?= $role->name; ?></option>
-        <?php endforeach; ?>
-      </select>
-    </div>
-    <?= form_error("role_id", "<div class='text-danger pl-2'>", "</div>"); ?>
-  </div>
+<div class="form-group">
+  <label for="title">Title Video</label>
+  <input class="form-control" id="title" placeholder="Enter name Video" name="title" value="<?= set_value("title", null) ?? $video->title ?>">
+  <?= form_error("title", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
-<div class="row mt-3">
-  <div class="col-md-6">
-    <div class="form-group form-group-default">
-      <label>Email</label>
-      <input type="email" class="form-control" name="email" placeholder="Name email" value="<?= set_value("email", null) ?? $user_edit->email ?? ''; ?>">
-    </div>
-    <?= form_error("email", "<div class='text-danger pl-2'>", "</div>"); ?>
-  </div>
-  <div class="col-md-6">
-    <div class="form-group form-group-default">
-      <label>Jabatan / Khusus LEVEL Admin</label>
-      <input class="form-control" name="jabatan" value="<?= set_value("jabatan", null) ??  $user_edit->jabatan ?? ''; ?>">
-    </div>
-    <?= form_error("jabatan", "<div class='text-danger pl-2'>", "</div>"); ?>
-  </div>
+<div class="form-group">
+  <label for="description">Keterangan Video</label>
+  <input class="form-control" id="description" placeholder="Enter Keterangan Video" name="description" value="<?= set_value("description", null) ?? $video->description ?>">
+  <?= form_error("description", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
-<?php if ($user_edit->name) : ?>
-  <h3 class="text-danger mt-5">Kosongkan password Jika tidak ingin mengubah</h3>
-<?php endif; ?>
-<div class="row mt-3">
-  <div class="col-6">
-    <div class="form-group form-group-default">
-      <label>Password</label>
-      <input type="password" class="form-control" name="password">
+<div class="form-group">
+  <label for="no_urut">No Urut Video</label>
+  <input type="number" class="form-control" id="no_urut" placeholder="Enter No Urut Video" name="no_urut" value="<?= set_value("no_urut", null) ?? $video->no_urut ?>">
+  <?= form_error("no_urut", "<div class='danger text-danger'>", "</div>"); ?>
+</div>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5">
+      <video class="img-fluid video-here" controls playsinline muted loop>
+        <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
+      </video>
     </div>
-    <?= form_error("password", "<div class='text-danger pl-2'>", "</div>"); ?>
-  </div>
-  <div class="col-6">
-    <div class="form-group form-group-default">
-      <label>Password Refeat</label>
-      <input type="password" class="form-control" name="confirmpassword">
+    <div class="col-md-7">
+      <input type="file" name="video" class="change-video" id="customFile">
+      <label class="custom-file-label" for="customFile">Choose file</label>
     </div>
-    <?= form_error("confirmpassword", "<div class='text-danger pl-2'>", "</div>"); ?>
   </div>
+  <?= $this->session->flashdata("video"); ?>
 </div>
