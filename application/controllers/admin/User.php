@@ -129,7 +129,7 @@ class User extends Admin_Controller
     $this->form_validation->set_rules("name", "Nama User", "required|min_length[4]");
     $this->form_validation->set_rules("username", "Nama User", "required|min_length[3]" . $validUsername);
     $this->form_validation->set_rules("email", "User Email", "required|valid_email" . $validEmail);
-    $this->form_validation->set_rules("status", "User Status", "required|in_list[1,2]");
+    $this->form_validation->set_rules("status", "User Status", "required|in_list[0,1,2]");
     $this->form_validation->set_rules("role_id", "User Rules", "required|in_list[$validRules]");
     if ($this->input->post("role_id") == "2")
       $this->form_validation->set_rules("jabatan", "User Jabatan", "required|min_length[4]");
