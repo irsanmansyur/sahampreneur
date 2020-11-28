@@ -43,6 +43,7 @@
   <!-- Uncomment below i you want to use a preloader -->
   <div id="preloader"></div>
 
+  <?php $this->load->view($thema_load . "components/js_library.php"); ?>
   <script src="<?= $thema_folder . "pages/video/partials/main.js"; ?>"></script>
 
   <script>

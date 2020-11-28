@@ -256,10 +256,6 @@ h6 {
 
 /* Desktop Navigation */
 
-.main-nav {
-	/* Drop Down */
-	/* Deep Drop Down */
-}
 
 .main-nav,
 .main-nav * {
@@ -1563,8 +1559,12 @@ h6 {
 }
 
 @media (max-width: 574px) {
+	.form-logout {
+		padding: 10px;
+	}
+
 	.logout-res {
-		display: block;
+		width: 100%;
 	}
 
 	#footer .footer-top .social-links a {

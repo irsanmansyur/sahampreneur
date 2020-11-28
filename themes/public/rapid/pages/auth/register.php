@@ -17,7 +17,8 @@
 
 <body>
 
-  <div class="wrapper" style="background-image: url('<?= $thema_folder; ?>assets/auth/images/bg-registration-form-1.jpg');">
+  <div class="wrapper" style="background-color:#e2edf0;">
+    <!-- <div class="wrapper" style="background-image: url('<?= $thema_folder; ?>assets/auth/images/bg-registration-form-1.jpg');"> -->
     <div class="inner" style="min-height: 
     80vh;position:relative">
       <div class="image-holder d-flex align-items-center" style="min-height: 

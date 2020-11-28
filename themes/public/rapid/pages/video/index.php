@@ -13,9 +13,9 @@
   ============================-->
 
   <main id="main" class='mt-5 mn-vh-100'>
-    <div class="row">
-      <div class="col-md-8 my-5">
-        <div class="pl-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 my-5">
           <div class="card">
             <!--Card image-->
             <video controlsList="nodownload" class="img-fluid video-here" controls autoplay id="videoPlay" data-current="video<?= $kategories[0]->videos()[0]->id; ?>">
@@ -23,9 +23,7 @@
             </video>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 my-5">
-        <div class="container">
+        <div class="col-md-4 my-5">
           <!--Accordion wrapper-->
           <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
@@ -67,6 +65,7 @@
         </div>
       </div>
     </div>
+
   </main>
   <div class="row">
     <div class=""></div>
