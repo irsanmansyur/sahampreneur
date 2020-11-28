@@ -32,7 +32,7 @@
       <label>status</label>
       <select class="form-control" id="status" name="status">
         <option value="1" <?= set_select("status", 1); ?>>aktif</option>
-        <option value="0" <?= set_select("status", 2); ?>>Non Aktif</option>
+        <option value="2" <?= set_select("status", 2); ?>>Non Aktif</option>
       </select>
     </div>
     <?= form_error("status", "<div class='text-danger pl-2'>", "</div>"); ?>
