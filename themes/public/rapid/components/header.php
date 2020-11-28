@@ -17,7 +17,7 @@
           <li class="drop-down"><a href="#fitur">Video & Kalkulator</a>
             <ul>
               <li><a href="<?= base_url("video"); ?>">Video</a></li>
-              <li><a href="<?= base_url("kalkulator"); ?>">Kalkulator</a></li>
+              <li><a href="<?= base_url("kalkulator"); ?>">Kalkulator Harga Wajar Saham</a></li>
             </ul>
           </li>
           <li><a href="<?= base_url(); ?>#team">Tim</a></li>
@@ -44,7 +44,7 @@
           <?php if (is_login()) : ?>
             <li> <a href="<?= base_url("profile"); ?>"> <?= split_name(user()->name)[0]; ?></a></li>
             <li>
-              <form action="auth/logout" method="post">
+              <form action="auth/logout" method="post" class="form-logout">
                 <button type="submit" class="btn btn-danger p-2 logout-res">Logout</button>
               </form>
             </li>
