@@ -32,8 +32,8 @@
       <label>status</label>
       <select class="form-control" id="status" name="status">
         <option disable>Select Status</option>
-        <option value="1" <?= set_select("status", "1"); ?>>aktif</option>
-        <option value="0" <?= set_select("status", "0"); ?>>Non Aktif</option>
+        <option value="1" <?= set_value("status") == 1  ? "selected" : ''; ?>>aktif</option>
+        <option value="0" <?= set_value("status") == 0 ? "selected" : ''; ?>>Non Aktif</option>
       </select>
     </div>
     <?= form_error("status", "<div class='text-danger pl-2'>", "</div>"); ?>
