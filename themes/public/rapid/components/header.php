@@ -33,7 +33,7 @@
           <?php endif; ?>
         <?php else :; ?>
           <li><a href="#about">Tentang Kami</a></li>
-          <li class="drop-down"><a href="#services">Fitur Premium</a>
+          <li class="drop-down"><a href="#fitur">Fitur Premium</a>
             <ul>
               <li><a href="<?= base_url("video"); ?>">Video</a></li>
               <li><a href="<?= base_url("kalkulator"); ?>">Kalkulator</a></li>
