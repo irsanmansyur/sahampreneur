@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title><?= $page_title; ?></title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <link rel="icon" href="<?= $thema_folder; ?>assets/img/icon.ico" type="image/x-icon" />
+
+  <link rel="icon" href="<?= base_url("assets/img/logo/sahampreneur.ico"); ?>" type="image/x-icon" />
+
 
   <!-- Fonts and icons -->
   <script src="<?= $thema_folder; ?>assets/js/plugin/webfont/webfont.min.js"></script>

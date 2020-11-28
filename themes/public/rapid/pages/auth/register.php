@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Form Pendaftaran Klient Sahampreneur</title>
+  <title>Register SahamPreneur</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- MATERIAL DESIGN ICONIC FONT -->
@@ -35,7 +35,7 @@
               <?= form_error("nama_depan", "<div class='text-danger'>", "</div>"); ?>
             </div>
             <div class="col-6">
-              <input type="text" style="width:100%;margin-bottom :3px" value="<?= set_value("nama_belakan"); ?>" name="nama_belakan" placeholder="Nama Belakan" class="form-control">
+              <input type="text" style="width:100%;margin-bottom :3px" value="<?= set_value("nama_belakan"); ?>" name="nama_belakan" placeholder="Nama Belakang" class="form-control">
               <?= form_error("nama_belakan", "<div class='text-danger'>", "</div>"); ?>
             </div>
           </div>
