@@ -1,5 +1,5 @@
 <center>
-  <?php if ($user_edit->name_rules == "Admin") : ?>
+  <?php if (isset($user_edit->name_rules) && $user_edit->name_rules == "Admin") : ?>
     <div class="card-avatar">
       <input type="file" name="gambar" id="imagechange" class="d-none" />
       <a href="#pablo" id="changePhoto">

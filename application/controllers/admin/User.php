@@ -176,7 +176,7 @@ class User extends Admin_Controller
   }
   private function upload($filename = 'default.jpg')
   {
-    if ($_FILES['gambar']['name']) {
+    if (isset($_FILES['gambar']) && $_FILES['gambar']['name']) {
       $config['allowed_types'] = 'gif|jpg|jpeg|png';
       $config['max_size']      = '2048';
       $config['upload_path'] = './assets/img/profile/';

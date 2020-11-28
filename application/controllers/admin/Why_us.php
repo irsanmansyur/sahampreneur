@@ -45,7 +45,7 @@ class Why_us extends Admin_Controller
     $this->form_validation->set_rules($whyUs->getRules());
     if ($this->form_validation->run()) {
       $whyUs->save();
-      flashDataDB("success", "Testimonial telah di tambahkan");
+      flashDataDB("success", "Berhasil di tambahkan");
       return redirect("admin/why_us");
     }
     $data = [

@@ -43,8 +43,7 @@ class Pembayaran extends MY_Controller
   {
 
     $settings = $this->setting->getSettings();
-    // $cekPmbyrn = $this->Pembayaran_model->first("user_id", user()->id);
-    $cekPmbyrn = $this->Pembayaran_model->first("user_id", 18);
+    $cekPmbyrn = $this->Pembayaran_model->first("user_id", user()->id);
     if ($cekPmbyrn) {
       $pembayaran = $cekPmbyrn;
     } else {
@@ -69,9 +68,7 @@ class Pembayaran extends MY_Controller
     }
     $filename = $this->upload->data('file_name');
 
-
-    // $pembayaran->user_id = user()->id;
-    $pembayaran->user_id = 18;
+    $pembayaran->user_id = user()->id;
     $pembayaran->bukti_pembayaran = $filename;
     $pembayaran->status = '00';
     $pembayaran->updated = 1;
