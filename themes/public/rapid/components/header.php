@@ -14,7 +14,7 @@
         <li class="active"><a href="<?= base_url(); ?>">Beranda</a></li>
         <?php if (current_url() != base_url()) : ?>
           <li><a href="<?= base_url(); ?>#about">Tentang Kami</a></li>
-          <li class="drop-down"><a href="#services">Fitur Premium</a>
+          <li class="drop-down"><a href="#fitur">Fitur Premium</a>
             <ul>
               <li><a href="<?= base_url("video"); ?>">Video</a></li>
               <li><a href="<?= base_url("kalkulator"); ?>">Kalkulator</a></li>
@@ -44,7 +44,9 @@
           <?php if (is_login()) : ?>
             <li> <a href="<?= base_url("profile"); ?>"> <?= split_name(user()->name)[0]; ?></a></li>
             <li>
-              <form action="auth/logout" method="post"><button type="submit" class="btn btn-danger p-2">Logout</button></form>
+              <form action="auth/logout" method="post">
+                <button type="submit" class="btn btn-danger p-2 logout-res">Logout</button>
+              </form>
             </li>
           <?php else : ?>
             <li><a href="auth/login">Login</a></li>
