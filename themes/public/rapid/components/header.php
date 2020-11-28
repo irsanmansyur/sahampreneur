@@ -14,7 +14,7 @@
         <li class="active"><a href="<?= base_url(); ?>">Beranda</a></li>
         <?php if (current_url() != base_url()) : ?>
           <li><a href="<?= base_url(); ?>#about">Tentang Kami</a></li>
-          <li class="drop-down"><a href="#fitur">Fitur Premium</a>
+          <li class="drop-down"><a href="#fitur">Video & Kalkulator</a>
             <ul>
               <li><a href="<?= base_url("video"); ?>">Video</a></li>
               <li><a href="<?= base_url("kalkulator"); ?>">Kalkulator</a></li>
@@ -33,10 +33,10 @@
           <?php endif; ?>
         <?php else :; ?>
           <li><a href="#about">Tentang Kami</a></li>
-          <li class="drop-down"><a href="#fitur">Fitur Premium</a>
+          <li class="drop-down"><a href="#fitur">Video & Kalkulator</a>
             <ul>
               <li><a href="<?= base_url("video"); ?>">Video</a></li>
-              <li><a href="<?= base_url("kalkulator"); ?>">Kalkulator</a></li>
+              <li><a href="<?= base_url("kalkulator"); ?>">Kalkulator Harga Wajar Saham</a></li>
             </ul>
           </li>
           <li><a href="#team">Tim</a></li>

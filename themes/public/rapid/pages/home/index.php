@@ -52,8 +52,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Kalkulator Saham</h3>
-            <p class="cta-text">Klik disini untuk menghitung saham kamu! .</p>
+            <h3 class="cta-title">Kalkulator Harga Wajar Saham</h3>
+            <p class="cta-text">Klik disini untuk menghitung saham kamu!<br>
+              Kamu bisa mengetahui apakah saham tersebut dalam kategori murah atau mahal.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" href="<?= base_url("kalkulator"); ?>">Klik Disini</a>

@@ -30,11 +30,11 @@
         <div class="form-group " style=" margin-bottom: 25px;">
           <div class="row">
             <div class="col-6">
-              <input type="text" style="width:100%;margin-bottom :3px" name="nama_depan" placeholder="First Name" value="<?= set_value("nama_depan"); ?>" class="form-control">
+              <input type="text" style="width:100%;margin-bottom :3px" name="nama_depan" placeholder="Nama Depan" value="<?= set_value("nama_depan"); ?>" class="form-control">
               <?= form_error("nama_depan", "<div class='text-danger'>", "</div>"); ?>
             </div>
             <div class="col-6">
-              <input type="text" style="width:100%;margin-bottom :3px" value="<?= set_value("nama_belakan"); ?>" name="nama_belakan" placeholder="Last Name" class="form-control">
+              <input type="text" style="width:100%;margin-bottom :3px" value="<?= set_value("nama_belakan"); ?>" name="nama_belakan" placeholder="Nama Belakan" class="form-control">
               <?= form_error("nama_belakan", "<div class='text-danger'>", "</div>"); ?>
             </div>
           </div>

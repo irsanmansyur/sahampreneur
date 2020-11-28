@@ -6,7 +6,7 @@
 
       <header class="section-header">
         <h3>Testimonial</h3>
-        <h4 class="text-center">Beberapa Testimonial Dari Klien Kami </h4>
+        <h4 class="text-center">Apa Yang Mereka Katakan Tentang Sahampreneur </h4>
       </header>
 
       <div class="row justify-content-center">

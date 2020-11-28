@@ -32,7 +32,7 @@
 <body class="login">
   <div class="wrapper wrapper-login">
     <div class="container container-login animated fadeIn">
-      <h3 class="text-center">Sign In</h3>
+      <h3 class="text-center">SIGN IN</h3>
 
       <?php $this->load->view($thema_load . "partials/_alert.php"); ?>
 
@@ -40,7 +40,7 @@
         <div class="login-form">
           <div class="form-group form-floating-label">
             <input id="email" name="email" type="text" class="form-control input-border-bottom" required value="<?= set_value('email'); ?>">
-            <label for="email" class="placeholder">email</label>
+            <label for="email" class="placeholder">Email</label>
             <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
           </div>
           <div class="form-group form-floating-label">
@@ -54,7 +54,7 @@
           <div class="row form-sub m-0">
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="rememberme">
-              <label class="custom-control-label" for="rememberme">Ingat saya</label>
+              <label class="custom-control-label" for="rememberme">Ingat Saya</label>
             </div>
 
             <!-- <a href="#" class="link float-right">Forget Password ?</a> -->
@@ -63,8 +63,8 @@
             <button type="submit" class="btn btn-primary btn-rounded btn-login">Masuk</button>
           </div>
           <div class="login-account">
-            <span class="msg">Tidak punya akun ? </span>
-            <a href="<?= base_url('register/user'); ?>" id="show-signup" class="link">Daftar disini</a>
+            <span class="msg">Tidak Punya Akun ? </span>
+            <a href="<?= base_url('register/user'); ?>" id="show-signup" class="link">Daftar Disini</a>
           </div>
         </div>
       </form>
