@@ -43,5 +43,6 @@
 	.logout-res {
 		display: block;
 		margin-left: 5px;
+		min-width: 80%;
 	}
 }
