@@ -98,7 +98,7 @@
     <div class="modal-dialog modal-xl h-100" role="document">
       <div class="modal-content  h-75">
         <div class="modal-header" style="justify-content: space-between;">
-          <h5 class="modal-title" id="exampleModalLongTitle">Term And Policy</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Terms and Conditions</h5>
           <button type="button" style="width:50px;margin:0;background:transparent" name="close_modal" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="font-size:40px;color:black;">&times;</span>
           </button>
