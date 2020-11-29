@@ -19,6 +19,7 @@
           <h2>SAHAMPRENEUR</h2>
           <h5>
             <b>Apakah Kalian Siap Untuk Berinvestasi dan Trading Mandiri ?</b>
+            <br>
             <i>“Kasih dia seekor ikan, dia bisa makan untuk sehari. Ajari dia cara memancing dan dia bisa makan untuk seumur hidup.”</i>
           </h5>
           <div>
