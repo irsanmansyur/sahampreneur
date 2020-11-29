@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Laporan Mobil</a>
+                <a href="#">Daftar Video</a>
               </li>
             </ul>
           </div>

@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#"><?= @$title; ?></a>
+                <a href="#"><?= @$page_title; ?></a>
               </li>
             </ul>
           </div>
