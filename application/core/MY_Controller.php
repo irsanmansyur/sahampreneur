@@ -39,9 +39,9 @@ class MY_Controller extends CI_Controller
     $Directory = $this->router->directory;
     $data = [
       'route' => compact(['Controller', 'Method', 'Directory']),
-      'title' => "Selamat datang",
-      'page_description' => "Ini adalah Description Default, Selamat datang.!",
-      "page_title" => "Selamat datang di super admin ci 3, anda berada di Controller $Controller dan method $Method"
+      'title' => "Selamat Datang!",
+      'page_description' => "Ini adalah Description Default, Selamat Datang!.!",
+      "page_title" => "Selamat Datang! di super admin ci 3, anda berada di Controller $Controller dan method $Method"
     ];
     return $data;
   }

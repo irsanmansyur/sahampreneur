@@ -23,7 +23,9 @@
     80vh;position:relative">
       <div class="image-holder d-flex align-items-center" style="min-height: 
     80vh">
-        <img src="<?= base_url("assets\img\logo\sahampreneur.png") ?>">
+        <a href="<?= base_url(); ?>">
+          <img src="<?= base_url("assets\img\logo\sahampreneur.png") ?>">
+        </a>
       </div>
 
       <form method="post" id="formMe">
@@ -102,7 +104,7 @@
           </button>
         </div>
         <div class="modal-body h-100">
-          <iframe src="https://drive.google.com/file/d/1uSTLkKHvYvXoANBMEJNe1zke84KRcz28/preview" style="width:100%;height:100%" frameborder="0"></iframe>
+          <iframe src="https://drive.google.com/file/d/1_AdVXC0GyakVGCWjaIoCepJpHd6j3Odb/preview" style="width:100%;height:100%" frameborder="0"></iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary noaccept" data-dismiss="modal">Close</button>
@@ -122,7 +124,7 @@
           </button>
         </div>
         <div class="modal-body h-100">
-          <iframe src="https://drive.google.com/file/d/19nws66axlYDZSOjegy0oXBS-S_akyB52/preview" style="width:100%;height:100%" frameborder="0"></iframe>
+          <iframe src="https://drive.google.com/file/d/1b7QrcCV_UWy0zDM2EPcsVu3Z8k5pA42_/preview" style="width:100%;height:100%" frameborder="0"></iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary noaccept" data-dismiss="modal">Close</button>

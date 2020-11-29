@@ -28,13 +28,13 @@ class Why_us extends Admin_Controller
   public function index()
   {
     if (!is_login()) {
-      $this->session->set_flashdata("danger", "Silahkan Login Terlebih dahulu!");
+      $this->session->set_flashdata("danger", "Silahkan Login Terlebih Dahulu!");
       redirect("/login");
     };
 
     $whyUses = $this->why_us_model->all();
     $data = [
-      "page_title" => "Selamat Datang",
+      "page_title" => "Number in Dashboard",
     ];
     $this->template->load('admin', 'why-us/index', array_merge($data, compact(['whyUses'])));
   }

@@ -51,6 +51,9 @@
                       <th scope="col">#</th>
                       <th scope="col">Nama User</th>
                       <th scope="col">Tanggal Upload</th>
+                      <?php if (isset($statusBayar)) : ?>
+                        <th scope="col"><?= $statusBayar ? "Tanggal di Verifikasi" : "Tanggal di Tolak"; ?></th>
+                      <?php endif; ?>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -64,8 +67,10 @@
                         <td><?= $no++; ?></td>
                         <td><?= $pembayaran->user->name; ?></td>
                         <td><?= date("d-m-Y", strtotime($pembayaran->created_at)); ?></td>
+                        <?php if (isset($statusBayar)) : ?>
+                          <td><?= date("d-m-Y", strtotime($pembayaran->updated_at)); ?></td>
+                        <?php endif; ?>
                         <td>
-
                           <a href="<?= base_url('admin/pembayaran/detail/' . $pembayaran->id); ?>" class="btn btn-info">
                             <span class="btn-label">
                               <i class="fa fa-info"></i>

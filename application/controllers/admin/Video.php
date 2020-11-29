@@ -143,7 +143,7 @@ class Video extends Admin_Controller
       return redirect("admin/video" . ($kategori ? "/kategori/{$kategori->id}" : ''));
     }
     $data = [
-      'page_title' => "Tambah Video",
+      'page_title' => "Edit Video",
     ];
     $this->template->load('admin', 'video/edit', array_merge($data, compact(['kategories', 'video',  "kategori"])));
   }

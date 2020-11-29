@@ -32,7 +32,13 @@
 </head>
 
 <body class="login">
-  <div class="wrapper wrapper-login">
+
+  <div class="wrapper wrapper-login flex-column">
+
+    <div class="container text-center">
+      <a href="<?= base_url(); ?>">
+        <img src="/assets/img/logo/sahampreneur.png" alt="" class="img-fluid" style="padding: 0;margin-top: -20px;max-height: 91px;"></a>
+    </div>
     <div class="container container-login animated fadeIn">
       <h3 class="text-center">SIGN IN</h3>
 
@@ -77,6 +83,15 @@
   <script src="<?= $thema_folder; ?>assets/js/core/popper.min.js"></script>
   <script src="<?= $thema_folder; ?>assets/js/core/bootstrap.min.js"></script>
   <script src="<?= $thema_folder; ?>assets/js/ready.js"></script>
+  <script src="<?= $thema_folder; ?>assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+  <script>
+    window.setTimeout(function() {
+      $(".alert").fadeTo(500, 0).slideUp(500, function() {
+        $(this).remove();
+      });
+    }, 3000);
+  </script>
 </body>
 
 </html>

@@ -23,7 +23,7 @@ class Kalkulator extends MY_Controller
   {
     parent::__construct();
     if (!is_login()) {
-      $this->session->set_flashdata("danger", "Silahkan Login Terlebih dahulu!");
+      $this->session->set_flashdata("danger", "Silahkan Login Terlebih Dahulu!");
       redirect("/login");
     }
     $this->load->model(["Pembayaran_model"]);
@@ -36,7 +36,7 @@ class Kalkulator extends MY_Controller
       return redirect("/pembayaran");
     } else if ($pembayaran->status != 1) {
       if ($pembayaran->status == 0) {
-        $data['status'] = "Mohon bersabar , pembayaran anda sedang tahap proses... kami akan segera menghubungi anda jika pembayaran anda telah di verifikasi";
+        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Kami akan segera menghubungi anda jika pembayaran anda telah diverifikasi. Terima Kasih.";
       } else   if ($pembayaran->status == 2) {
         $data['status'] = "Pembayaran Anda di Tolak ..!, Dengan Alasan : \" $pembayaran->alasan \"";
       }
@@ -135,7 +135,7 @@ class Kalkulator extends MY_Controller
       return redirect("/pembayaran");
     } else if ($pembayaran->status != 1) {
       if ($pembayaran->status == 0) {
-        $data['status'] = "Mohon bersabar , pembayaran anda sedang tahap proses... kami akan segera menghubungi anda jika pembayaran anda telah di verifikasi";
+        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Kami akan segera menghubungi anda jika pembayaran anda telah diverifikasi. Terima Kasih.";
       } else   if ($pembayaran->status == 2) {
         $data['status'] = "Pembayaran Anda di Tolak ..!, Dengan Alasan : \" $pembayaran->alasan \"";
       }

@@ -12,7 +12,7 @@ class Profile extends MY_Controller
   public function index()
   {
     if (!is_login()) {
-      $this->session->set_flashdata("danger", "Silahkan Login Terlebih dahulu!");
+      $this->session->set_flashdata("danger", "Silahkan Login Terlebih Dahulu!");
       redirect("/login");
     }
     $pembayaran = $this->Pembayaran_model->first("user_id", user()->id);

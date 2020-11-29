@@ -36,7 +36,7 @@
         <div class="card-body">
           <div class="row contacts">
             <div class="col invoice-to">
-              <div class="text-gray-light">INVOICE TO:</div>
+              <div class="text-gray-light">INVOICE TO</div>
               <h2 class="to"><?= user()->name; ?></h2>
               <!-- <div class="address"><?= ''; ?></div> -->
               <div class="email"><a href="mailto:john@example.com"><?= user()->email; ?></a></div>
@@ -79,7 +79,7 @@
                 <p class="py-1">Dengan Alasan : <b><?= $pembayaran->alasan; ?></b></p>
                 <p class="text-danger">Mohon Ganti Bukti Pembayaran</p>
               <?php else :; ?>
-                <p class="py-4"><button class="btn btn-primary">Menunggu Verifikasi</button></p>
+                <p class="py-4"><button class="btn btn-danger">Sedang Diverifikasi</button></p>
               <?php endif; ?>
             </center>
             <hr>

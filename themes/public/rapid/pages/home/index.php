@@ -17,7 +17,10 @@
 
           <!-- <h2>Rapid Solutions<br>for Your <span>Business!</span></h2> -->
           <h2>SAHAMPRENEUR</h2>
-          <h5>“Kasih dia seekor ikan, dia bisa makan untuk sehari. Ajari dia cara memancing dan dia bisa makan untuk seumur hidup.”</h5>
+          <h5>
+            <b>Apakah Kalian Siap Untuk Berinvestasi dan Trading Mandiri ?</b>
+            <i>“Kasih dia seekor ikan, dia bisa makan untuk sehari. Ajari dia cara memancing dan dia bisa makan untuk seumur hidup.”</i>
+          </h5>
           <div>
             <?php if (!is_login()) : ?>
               <a href="<?= base_url("register/user"); ?>" class="btn-get-started scrollto">Registrasi</a>

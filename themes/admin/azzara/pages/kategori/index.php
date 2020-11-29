@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Laporan Mobil</a>
+                <a href="#">Daftar Kategori</a>
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">nama</th>
+                      <th scope="col">Nama</th>
                       <th scope="col">Keterangan</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Video</th>

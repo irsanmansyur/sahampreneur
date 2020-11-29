@@ -99,7 +99,7 @@ class User extends Admin_Controller
         $accessRole['jabatan'] = $jabatan ? $jabatan : "Karyawan";
       }
       $this->db->insert("access_role_user", $accessRole);
-      $this->session->set_flashdata('success', 'Pendaftaran berhasil');
+      $this->session->set_flashdata('success', 'Pendaftaran Berhasil!');
       redirect(base_url('admin/user/list'));
     } else {
       $rules = $this->db->from("rules")->where_not_in("id", [1])->get()->result();

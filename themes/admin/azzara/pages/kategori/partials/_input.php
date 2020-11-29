@@ -9,7 +9,7 @@
   <?= form_error("keterangan", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
 <div class="form-group">
-  <label for="no_urut">No Urut Kategori</label>
+  <label for="no_urut">No. Urut Kategori</label>
   <input type="number" class="form-control" id="no_urut" placeholder="Enter No Urut Kategori" name="no_urut" value="<?= set_value("no_urut", null) ?? $kategori->no_urut ?>">
   <?= form_error("no_urut", "<div class='danger text-danger'>", "</div>"); ?>
 </div>

@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Masukan User</a>
+                <a href="#">Daftar Masukan Pesan</a>
               </li>
             </ul>
           </div>
@@ -48,9 +48,9 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">nama</th>
+                      <th scope="col">Nama</th>
                       <th scope="col">Di Kirim Pada</th>
-                      <th scope="col">email</th>
+                      <th scope="col">Email</th>
                       <th scope="col">Subject</th>
                       <th scope="col">Pesan</th>
                     </tr>

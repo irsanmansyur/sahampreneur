@@ -45,7 +45,7 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Form Edit data Video</div>
+              <div class="card-title">Edit Detail Video</div>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
               <div class="card-body">

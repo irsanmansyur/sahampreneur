@@ -10,7 +10,7 @@
   </div>
   <div class="card-body">
     <div class="user-profile text-center">
-      <h1>Selamat datang</h1>
+      <h1>Selamat Datang!</h1>
       <div class="name"><?= $user->name; ?>,</div>
       <div class="email"><?= $user->email; ?></div>
       <?php if (current_url() != base_url('admin/profile')) : ?>

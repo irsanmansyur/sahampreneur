@@ -128,7 +128,7 @@ class Register extends MY_Controller
     if (!$rule || !isset($rule->id)) $rule = $this->rules_model->save(['name' => "User"]);
     $this->db->insert("access_role_user", ['role_id' => $rule->id, "user_id" => $user->id]);
 
-    $this->session->set_flashdata('success', 'Pendaftaran berhasil');
+    $this->session->set_flashdata('success', 'Pendaftaran Berhasil!');
     if ($type == "user")
       return redirect('login');
     return redirect('auth/login');

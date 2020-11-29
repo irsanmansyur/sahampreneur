@@ -13,9 +13,14 @@ class Pembayaran extends Admin_Controller
   public function index()
   {
     if ($this->input->get("type") == "belum_acc")
-      $this->pembayaran_model->db->where_not_in('status', [1]);
-    elseif ($this->input->get("type") == "diterima")
+      $this->pembayaran_model->db->where('status', 0);
+    elseif ($this->input->get("type") == "diterima") {
+      $this->data['statusBayar'] = true;
       $this->pembayaran_model->db->where('status', 1);
+    } else {
+      $this->data['statusBayar'] = false;
+      $this->pembayaran_model->db->where('status', 2);
+    }
     $pembayarans = $this->pembayaran_model->all();
     $data = [
       'page_title' => "Daftar Pembayaran User",
@@ -29,10 +34,10 @@ class Pembayaran extends Admin_Controller
 
     if ($this->input->method() == "post") {
       $pembayaran->updated = '  ';
+      $pembayaran->updated_at = date("Y-m-d", time());
       if ($this->input->post('alasan')) {
         $pembayaran->alasan = $this->input->post('alasan');
         $pembayaran->status = 2;
-
         $pembayaran->update();
         flashDataDB("warning", "Pembayaran telah di Tolak");
       } else {
@@ -40,12 +45,13 @@ class Pembayaran extends Admin_Controller
         $pembayaran->alasan = " ";
         $pembayaran->update();
         flashDataDB("success", "Pembayaran telah di diterima");
+        return redirect("admin/pembayaran?type=diterima");
       }
-      return redirect("admin/pembayaran?type=belum_acc");
+      return redirect("admin/pembayaran?type=rejected");
     }
 
     $data = [
-      'page_title' => "Details Pembayaran dari User",
+      'page_title' => "Detail Data Pembayaran User",
     ];
     $this->template->load('admin', 'pembayaran/detail', array_merge($data, compact(['pembayaran'])));
   }
