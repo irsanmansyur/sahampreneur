@@ -24,7 +24,7 @@
           </h5>
           <div>
             <?php if (!is_login()) : ?>
-              <a href="<?= base_url("register/user"); ?>" class="btn-get-started scrollto">Registrasi</a>
+              <a href="<?= base_url("register/user"); ?>" class="btn-get-started scrollto">Yuk Belajar !</a>
             <?php endif; ?>
           </div>
         </div>
