@@ -87,7 +87,7 @@ class Video extends Admin_Controller
         $this->session->set_flashdata("video", "<div class='error text-danger'>Please Select Video</div>");
         return back();
       }
-      $file = $this->upload($video->name);
+      $file = $this->upload();
       if (!$file)  return back();
       $video->file = $file;
       $video->save();
