@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Testimonial</a>
+                <a href="#">List Testimonial</a>
               </li>
             </ul>
           </div>

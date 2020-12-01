@@ -33,27 +33,27 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item">
-                <a href=<?= base_url('admin/why_us') ?>>Why Us </a>
+                <a href=<?= base_url('admin/why_us') ?>>Homepage Statistic  </a>
               </li>
               <li class="separator">
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Edit</a>
+                <a href="#">Edit Homepage Statistic</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Form Edit data Why Us</div>
+              <div class="card-title">Form Edit Homepage Statistic</div>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
               <div class="card-body">
                 <?php $this->load->view($thema_load . "pages/why-us/partials/_input.php"); ?>
               </div>
               <div class="card-action">
-                <button class="btn btn-success" type="submit">Submit</button>
-                <button class="btn btn-danger" type="reset">Reset</button>
+              <button class="btn btn-danger" type="reset">Reset</button>
+              <button class="btn btn-success" type="submit">Submit</button>
               </div>
             </form>
           </div>

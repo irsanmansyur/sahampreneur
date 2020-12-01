@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Pembayaran</a>
+                <a href="#">Pembayaran</a>
               </li>
             </ul>
           </div>

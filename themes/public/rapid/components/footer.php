@@ -54,7 +54,7 @@
             <p>Kirim Keluhan atau Masukan anda disini.</p>
             <form action="api/kirim/masukan" method="post" id="myForm" name="myForm" role="form" class="contactForm">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Nama" data-rule="minlen:4|maxlen:50" data-msg="Please enter at least 4 chars and Max 50 chars" />
+                <input type="text" name="name" class="form-control" id="name" placeholder="Nama" data-rule="minlen:4|maxlen:50" data-msg="Nama tidak boleh melebihi 50 karakter" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
@@ -62,11 +62,11 @@
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4|maxlen:100" data-msg="Please enter at least 8 chars of subject and Max 100 chars" />
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4|maxlen:100" data-msg="Subject tidak boleh melebihi 100 karakter" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="minlen:4|maxlen:100" data-msg="Please write something for us and max 1000 chars" placeholder="Pesan"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="minlen:4|maxlen:100" data-msg="Pesan tidak boleh melebihi 1000 karakter" placeholder="Pesan"></textarea>
                 <div class="validation"></div>
               </div>
 

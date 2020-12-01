@@ -39,21 +39,22 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">tambah</a>
+                <a href="#">Tambah Testimonial</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Form Tambah data Testimonial</div>
+              <div class="card-title">Form Tambah Data Testimonial</div>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
               <div class="card-body">
                 <?php $this->load->view($thema_load . "pages/testimonial/partials/_input.php"); ?>
               </div>
               <div class="card-action">
+              <button class="btn btn-danger" type="reset">Reset</button>
                 <button class="btn btn-success" type="submit">Submit</button>
-                <button class="btn btn-danger" type="reset">Reset</button>
+                
               </div>
             </form>
           </div>
