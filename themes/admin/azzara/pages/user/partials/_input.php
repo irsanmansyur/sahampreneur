@@ -20,7 +20,7 @@
   <div class="col-md-6">
     <div class="form-group form-group-default">
       <label>Username</label>
-      <input type="text" class="form-control" name="username" placeholder="Name" value="<?= set_value("username", null) ?? $user_edit->username ?? ""; ?>">
+      <input type="text" class="form-control" name="username" placeholder="Username" value="<?= set_value("username", null) ?? $user_edit->username ?? ""; ?>">
     </div>
     <?= form_error("username", "<div class='text-danger pl-2'>", "</div>"); ?>
   </div>
@@ -56,7 +56,7 @@
   <div class="col-md-6">
     <div class="form-group form-group-default">
       <label>Email</label>
-      <input type="email" class="form-control" name="email" placeholder="Name email" value="<?= set_value("email", null) ?? $user_edit->email ?? ''; ?>">
+      <input type="email" class="form-control" name="email" placeholder="Email" value="<?= set_value("email", null) ?? $user_edit->email ?? ''; ?>">
     </div>
     <?= form_error("email", "<div class='text-danger pl-2'>", "</div>"); ?>
   </div>

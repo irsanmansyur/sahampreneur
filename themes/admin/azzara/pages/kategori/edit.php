@@ -39,13 +39,13 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">tambah</a>
+                <a href="#">Kategori Video</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Edit Detail Video</div>
+              <div class="card-title">Edit Kategori Video</div>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
               <div class="card-body">

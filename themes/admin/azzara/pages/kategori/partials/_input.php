@@ -1,6 +1,6 @@
 <div class="form-group">
   <label for="name">Nama Kategori</label>
-  <input class="form-control" id="name" placeholder="Enter name Kategori" name="name" value="<?= set_value("name", null) ?? $kategori->name ?>">
+  <input class="form-control" id="name" placeholder="Enter Nama Kategori" name="name" value="<?= set_value("name", null) ?? $kategori->name ?>">
   <?= form_error("name", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
 <div class="form-group">
@@ -10,7 +10,7 @@
 </div>
 <div class="form-group">
   <label for="no_urut">No. Urut Kategori</label>
-  <input type="number" class="form-control" id="no_urut" placeholder="Enter No Urut Kategori" name="no_urut" value="<?= set_value("no_urut", null) ?? $kategori->no_urut ?>">
+  <input type="number" class="form-control" id="no_urut" placeholder="Enter No. Urut Kategori" name="no_urut" value="<?= set_value("no_urut", null) ?? $kategori->no_urut ?>">
   <?= form_error("no_urut", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
 <div class="form-group">

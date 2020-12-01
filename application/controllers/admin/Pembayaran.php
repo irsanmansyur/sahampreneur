@@ -44,7 +44,7 @@ class Pembayaran extends Admin_Controller
         $pembayaran->status = 1;
         $pembayaran->alasan = " ";
         $pembayaran->update();
-        flashDataDB("success", "Pembayaran telah di diterima");
+        flashDataDB("success", "Pembayaran telah diterima");
         return redirect("admin/pembayaran?type=diterima");
       }
       return redirect("admin/pembayaran?type=rejected");
@@ -97,6 +97,6 @@ class Pembayaran extends Admin_Controller
 
     if (!$pembayaran) return $this->not_permition();
     $pembayaran->delete();
-    echo json_encode(flashDataDB('success', "Pembayaran dari " . $pembayaran->user()->name . " Telah di hapus"));
+    echo json_encode(flashDataDB('success', "Pembayaran dari " . $pembayaran->user()->name . " berhasil dihapus!"));
   }
 }

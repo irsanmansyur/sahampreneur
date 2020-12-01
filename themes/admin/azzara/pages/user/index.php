@@ -34,14 +34,14 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">list User</a>
+                <a href="#">User Setting</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header  d-flex justify-content-between">
               <div class="card-title"><?= $page_title; ?></div>
-              <a href="<?= base_url('admin/user/add'); ?>" class="btn btn-primary">Add</a>
+              <a href="<?= base_url('admin/user/add'); ?>" class="btn btn-primary">Tambah</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -49,7 +49,7 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">nama User</th>
+                      <th scope="col">Nama User</th>
                       <th scope="col">Referal</th>
                       <!-- <th scope="col">Gambar</th> -->
                       <!-- <th scope="col">Set Access Role</th> -->
@@ -118,7 +118,7 @@
           if (willDelete) {
             window.location = del.getAttribute('href');
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

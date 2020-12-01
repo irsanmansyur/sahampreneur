@@ -49,7 +49,7 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Detail Data Pembayaran</div>
+              <div class="card-title">Detail Data Pembayaran User</div>
             </div>
             <div class="card-body">
               <div class="row">

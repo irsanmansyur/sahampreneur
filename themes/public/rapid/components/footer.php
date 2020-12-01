@@ -29,8 +29,8 @@
               <div class="footer-links">
                 <h4>Hubungi kami</h4>
                 <p>
-                  <strong>Phone:</strong><?= @$settings->phone_number; ?><br>
-                  <strong>Email:</strong> <?= @$settings->email; ?><br>
+                  <strong>Phone : </strong><?= @$settings->phone_number; ?><br>
+                  <strong>Email : </strong> <?= @$settings->email; ?><br>
                 </p>
               </div>
 
@@ -58,7 +58,7 @@
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email|maxlen:100" data-msg="Please enter a valid email and Max 100 chars" />
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email|maxlen:100" data-msg="Email harus valid dan tidak boleh melebihi 100 karakter" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">

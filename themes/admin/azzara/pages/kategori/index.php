@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Kategori</a>
+                <a href="#">Kategori Video</a>
               </li>
             </ul>
           </div>
@@ -133,7 +133,7 @@
               });
             })
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

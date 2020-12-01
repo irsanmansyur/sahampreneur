@@ -28,7 +28,7 @@ class Setting extends Admin_Controller
     } else {
 
       $data = [
-        'page_title' => "Settings Aplikasi",
+        'page_title' => "Homepage Setting",
         'theme_admin' => $this->template->bacaThemes('admin'),
         'theme_public' => $this->template->bacaThemes('public'),
       ];

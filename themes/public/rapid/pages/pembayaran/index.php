@@ -74,12 +74,12 @@
           <?php if ($pembayaran) : ?>
             <center>Status Pesanan
               <?php if ($pembayaran->status == 2) : ?>
-                <p class="pt-4"><button class="btn btn-warning">Pembayaran di Tolak</button></p>
+                <p class="pt-4"><button class="btn btn-danger">Pembayaran di Tolak</button></p>
 
                 <p class="py-1">Dengan Alasan : <b><?= $pembayaran->alasan; ?></b></p>
                 <p class="text-danger">Mohon Ganti Bukti Pembayaran</p>
               <?php else :; ?>
-                <p class="py-4"><button class="btn btn-danger">Sedang Diverifikasi</button></p>
+                <p class="py-4"><button class="btn btn-warning">Sedang Diverifikasi</button></p>
               <?php endif; ?>
             </center>
             <hr>

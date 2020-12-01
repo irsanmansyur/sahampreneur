@@ -27,7 +27,7 @@
             <!-- <h3>Odio sed id eos et laboriosam consequatur eos earum soluta.</h3> -->
 
             <div class="text-center">
-              <h3 class="font-weight-bold">FELIX TOHANDA</h3>
+             <!-- <h3 class="font-weight-bold"></h3> -->
               <span class="d-block w-75 m-auto pb-3 border-bottom border-dark">Founder of Sahampreneur & Uniso</span>
               <img src="<?= base_url("assets/img/icon/ttd.jpeg"); ?>" alt="tertanda" class="mw-100">
             </div>
