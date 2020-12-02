@@ -53,6 +53,7 @@
                       <th scope="col">Email</th>
                       <th scope="col">Subject</th>
                       <th scope="col">Pesan</th>
+                      <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -66,6 +67,9 @@
                         <td><?= $masukan->email; ?></td>
                         <td><?= $masukan->subject; ?></td>
                         <td><?= $masukan->message; ?></td>
+                        <td>
+                          <a href="<?= base_url("admin/masukan/delete/" . $masukan->id); ?>" class="btn btn-danger delete">Delete</a>
+                        </td>
                       </tr>
                     <?php endforeach; ?>
                   </tbody>
@@ -104,9 +108,21 @@
           }
         }).then((willDelete) => {
           if (willDelete) {
-            window.location = del.getAttribute('href');
+            let url = del.getAttribute('href');
+            fetch(url, {
+              method: "post"
+            }).then(res => res.json()).then(res => {
+              res.status && del.closest("tr").remove();
+              swal(res.message, {
+                buttons: {
+                  confirm: {
+                    className: `btn btn-${res.status ? "success" : "danger"}`
+                  }
+                }
+              });
+            })
           } else {
-            swal("Tidak jadi dihapus!!", {
+            swal("Tidak jadi dihapus!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'
