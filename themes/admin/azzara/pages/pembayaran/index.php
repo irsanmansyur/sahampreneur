@@ -49,6 +49,7 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Nama User</th>
+                      <th scope="col">Referall </th>
                       <th scope="col">Tanggal Upload</th>
                       <?php if (isset($statusBayar)) : ?>
                         <th scope="col"><?= $statusBayar ? "Tanggal di Verifikasi" : "Tanggal di Tolak"; ?></th>
@@ -65,6 +66,13 @@
                       <tr class="key_me">
                         <td><?= $no++; ?></td>
                         <td><?= $pembayaran->user->name; ?></td>
+                        <td>
+                          <?php if ($pembayaran->user->referal()) : ?>
+                            <?= $pembayaran->user->referal()->name; ?> || <?= $pembayaran->user->referal()->username; ?>
+                          <?php else :; ?>
+                            Kosong
+                          <?php endif; ?>
+                        </td>
                         <td><?= date("d-m-Y", strtotime($pembayaran->created_at)); ?></td>
                         <?php if (isset($statusBayar)) : ?>
                           <td><?= date("d-m-Y", strtotime($pembayaran->updated_at)); ?></td>

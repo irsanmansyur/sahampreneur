@@ -132,6 +132,10 @@
                       <div class="col-6">: <?= $pembayaran->user()->username; ?></div>
                       <div class="col-6">Tanggal Registrasi</div>
                       <div class="col-6">: <?= date("d-m-Y", strtotime($pembayaran->user()->created_at)); ?></div>
+                      <?php if ($pembayaran->status === 1) : ?>
+                        <div class="col-6">Tanggal Verifikasi</div>
+                        <div class="col-6">: <?= date("d-m-Y", strtotime($pembayaran->user()->created_at)); ?></div>
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>

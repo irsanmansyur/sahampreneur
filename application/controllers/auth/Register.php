@@ -80,7 +80,7 @@ class Register extends MY_Controller
     );
     $this->form_validation->set_rules(
       'confirmpassword',
-      'confirmpassword',
+      'Confirm Password',
       'trim|required|matches[passwordsignin]',
       array(
         'required'      => 'Anda harus mengisi %s.',

@@ -5,7 +5,7 @@ class Dashboard extends Admin_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(["kategori_model", "video_model"]);
+    $this->load->model(["kategori_model", "video_model", "pembayaran_model"]);
   }
 
   function index()
@@ -46,12 +46,15 @@ class Dashboard extends Admin_Controller
 
     $count_kategori = $this->kategori_model->countAll();
     $count_video = $this->video_model->countVideo();
+    $count_user_rejected = $this->pembayaran_model->count(2);
+    $count_user_approved = $this->pembayaran_model->count(1);
+    $count_user_pending = $this->pembayaran_model->count(0);
 
     $data = [
       'page_title' => 'Selamat datang admin',
     ];
 
-    $this->template->load('admin', 'dashboard/index', array_merge($data, compact(['count_users', 'count_kategori', 'count_video'])));
+    $this->template->load('admin', 'dashboard/index', array_merge($data, compact(['count_users', 'count_kategori', 'count_video', "count_user_rejected", "count_user_approved", "count_user_pending"])));
   }
 
   private function _pemilik()

@@ -53,7 +53,7 @@ class Profile extends Admin_Controller
       $id = $user->id;
       $this->db->where('id', $id)->update("users", $dt);
       $this->session->set_flashdata('success', "profile Berhasil di ubah.!");
-      redirect('admin/dashboard');
+      return back();
     }
   }
 

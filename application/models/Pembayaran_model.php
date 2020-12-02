@@ -35,4 +35,10 @@ class Pembayaran_model extends CI_Model
   {
     return base_url("assets/img/pembayaran/" . $this->bukti_pembayaran);
   }
+  public function count($status)
+  {
+    $this->db->where("status", $status);
+    $this->db->from($this->_table);
+    return $this->db->count_all_results();
+  }
 }

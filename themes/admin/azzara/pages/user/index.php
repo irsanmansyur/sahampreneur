@@ -51,6 +51,7 @@
                       <th scope="col">#</th>
                       <th scope="col">Nama User</th>
                       <th scope="col">Referal</th>
+                      <th scope="col">Tanggal Registrasi</th>
                       <!-- <th scope="col">Gambar</th> -->
                       <!-- <th scope="col">Set Access Role</th> -->
                       <th scope="col">Action</th>
@@ -70,6 +71,8 @@
                             Kosong
                           <?php endif; ?>
                         </td>
+                        <td><?= date("d,M Y", strtotime($user->created_at)); ?></td>
+
                         <!-- <td><img src="<?= base_url('assets/img/profile/' . $user->profile); ?>" alt="" style="width:100px;height:100px"> </td> -->
                         <!-- <td>
                           <a href="<?= base_url('super-admin/access/type/' . $user->id . "/user"); ?>" class="btn btn-secondary btn-sm rounded">Change Accesss</a>
@@ -116,9 +119,21 @@
           }
         }).then((willDelete) => {
           if (willDelete) {
-            window.location = del.getAttribute('href');
+            let url = del.getAttribute('href');
+            fetch(url, {
+              method: "post"
+            }).then(res => res.json()).then(res => {
+              res.status && del.closest("tr").remove();
+              swal(res.message, {
+                buttons: {
+                  confirm: {
+                    className: `btn btn-${res.status ? "success" : "danger"}`
+                  }
+                }
+              });
+            })
           } else {
-            swal("Tidak jadi dihapus!!", {
+            swal("Tidak jadi dihapus!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

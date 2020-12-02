@@ -11,11 +11,11 @@ class Video_model extends CI_Model
       'label' => 'Judul Video',
       'rules' => 'required|min_length[3]'
     ),
-    array(
-      'field' => 'description',
-      'label' => 'Deskripsi Video',
-      'rules' => 'required|min_length[10]'
-    ),
+    // array(
+    //   'field' => 'description',
+    //   'label' => 'Deskripsi Video',
+    //   'rules' => 'required|min_length[10]'
+    // ),
     array(
       'field' => 'kategori_id',
       'label' => 'Kategori Video',

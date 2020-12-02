@@ -10,11 +10,11 @@ class Kategori_model extends CI_Model
       'label' => 'Nama kategori',
       'rules' => 'required|min_length[3]'
     ),
-    array(
-      'field' => 'keterangan',
-      'label' => 'Keterangan kategori',
-      'rules' => 'required|min_length[10]'
-    ),
+    // array(
+    //   'field' => 'keterangan',
+    //   'label' => 'Keterangan kategori',
+    //   'rules' => 'required|min_length[10]'
+    // ),
   ];
 
   public function __construct()
@@ -44,5 +44,8 @@ class Kategori_model extends CI_Model
         return base_url('assets/img/kategori/' . $this->image);
     }
     return base_url('assets/img/no-image.png');
+  }
+  public function paginate($limit, $offset)
+  {
   }
 }

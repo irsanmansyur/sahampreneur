@@ -174,6 +174,18 @@ class User extends Admin_Controller
       redirect(base_url('admin/user/list'));
     }
   }
+
+  public function delete($id, $bank = null)
+  {
+    $user = $this->user_model->first($id);
+
+    if (!$user || $this->input->method() != "post") {
+      echo  json_encode(["status" => false, 'message' => "Gagal!"]);
+    } else {
+      $delete =  $user->delete();
+      echo json_encode(flashDataDB('success', $user->name . " berhasil dihapus!"));
+    }
+  }
   private function upload($filename = 'default.jpg')
   {
     if (isset($_FILES['gambar']) && $_FILES['gambar']['name']) {

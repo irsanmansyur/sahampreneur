@@ -32,11 +32,14 @@
 
           <li class="nav-item dropdown hidden-caret">
             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-              <div class="avatar-sm">
+              <div class="d-flex align-contents-center">
                 <?php if (in_role("Admin")) : ?>
-                  <img src="<?= base_url('assets/img/profile/' . $user->profile); ?>" alt="..." class="avatar-img rounded-circle">
+                  <div class="avatar-sm">
+                    <img src="<?= base_url('assets/img/profile/' . $user->profile); ?>" alt="..." class="avatar-img rounded-circle">
+
+                  </div>
                 <?php else :; ?>
-                  <span class="text-white"> <?= $user->name; ?></span>
+                  <h4 class="text-white"><?= $user->name; ?></h4>
                 <?php endif; ?>
               </div>
             </a>
@@ -46,8 +49,6 @@
                   <?php if (in_role("Admin")) : ?>
                     <div class="avatar-lg"><img src="<?= base_url('assets/img/profile/' . $user->profile); ?>" alt="image profile" class="avatar-img rounded"></div>
                   <?php endif; ?>
-
-
                   <div class="u-text">
                     <h4><?= $user->name; ?></h4>
                     <p class="text-muted"><?= $user->email; ?></p>

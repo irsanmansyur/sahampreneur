@@ -23,13 +23,18 @@
     80vh;position:relative">
       <div class="image-holder d-flex align-items-center" style="min-height: 
     80vh">
-        <a href="<?= base_url(); ?>">
-          <img src="<?= base_url("assets\img\logo\sahampreneur.png") ?>">
-        </a>
+
+        <img src="<?= base_url("assets\img\logo\sahampreneur.png") ?>">
       </div>
 
       <form method="post" id="formMe">
-        <h3>Form pendaftaran</h3>
+        <a href="<?= base_url(); ?>">
+          <svg style="width: 30px;height:30px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+          </svg><b class="pl-2">Beranda</b>
+        </a>
+
+        <h3 class="mt-3">Form pendaftaran</h3>
         <div class="form-group " style=" margin-bottom: 25px;">
           <div class="row">
             <div class="col-6">

@@ -38,7 +38,7 @@ class Video extends Admin_Controller
     $data['pagination'] = $this->pagination->create_links();
 
 
-    $this->template->load('admin', 'video/index', array_merge($data, compact(['kategori', 'videos'])));
+    $this->template->load('admin', 'video/index', array_merge($data, compact(['videos'])));
   }
   public function kategori($id)
   {
