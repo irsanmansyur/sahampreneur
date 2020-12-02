@@ -43,7 +43,7 @@
                    <div class="my-3">
                      <img src="<?= base_url('assets/img/icon/kalkulator.jpeg'); ?>" alt="video" class="rounded-circle">
                    </div>
-                   <h5 class=" font-weight-bold display-5">Kalkulator Perhitungan Harga Wajar Saham ( Value Investing )
+                   <h5 class=" font-weight-bold display-5">Kalkulator Perhitungan Harga Wajar Saham <br/>( Value Investing )
                    </h5>
                    <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
                  </div>

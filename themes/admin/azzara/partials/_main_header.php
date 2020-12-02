@@ -56,7 +56,7 @@
               </li>
               <li>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url('admin/profile'); ?>">My Profile</a>
+                <a class="dropdown-item" href="<?= base_url('admin/profile'); ?>">Profil</a>
 
                 <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>">Logout</a>
               </li>

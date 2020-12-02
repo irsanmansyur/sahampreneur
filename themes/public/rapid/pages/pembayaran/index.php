@@ -23,7 +23,7 @@
               <div class="col company-details">
                 <h2 class="name">
                   <a target="_blank" href="<?= base_url(); ?>">
-                    <?= $settings->name_app; ?>
+                   <b> <?= $settings->name_app; ?> </b>
                   </a>
                 </h2>
                 <div><?= $settings->Alamat; ?></div>
@@ -36,24 +36,24 @@
         <div class="card-body">
           <div class="row contacts">
             <div class="col invoice-to">
-              <div class="text-gray-light">INVOICE TO</div>
+              <div class="text-gray-light"><b>INVOICE TO</b></div>
               <h2 class="to"><?= user()->name; ?></h2>
               <!-- <div class="address"><?= ''; ?></div> -->
               <div class="email"><a href="mailto:john@example.com"><?= user()->email; ?></a></div>
             </div>
             <div class="col invoice-details">
               <h1 class="invoice-id">INVOICE</h1>
-              <div class="date">Tanggal Pembayaran: <?= date("d/m/Y", isset($pembayaran->created_at) ? strtotime($pembayaran->created_at) : time()); ?></div>
+              <div class="date">Tanggal Pembayaran : <?= date("d/m/Y", isset($pembayaran->created_at) ? strtotime($pembayaran->created_at) : time()); ?></div>
               <!-- <div class="date">Due Date: 30/10/2018</div> -->
             </div>
           </div>
           <hr>
           <div class="row details">
             <div class="col">
-              <h4 class="card-title">Members Premium</h4>
+              <h4 class="card-title"><b>Online Course & Kalkulator Sahampreneur</b></h4>
             </div>
             <div class="col">
-              <h4>Jumlah Bayar : <?= rupiah($settings->harga_member); ?>
+              <h4><b>Jumlah Bayar : <?= rupiah($settings->harga_member); ?></b>
               </h4>
             </div>
           </div>
@@ -79,7 +79,7 @@
                 <p class="py-1">Dengan Alasan : <b><?= $pembayaran->alasan; ?></b></p>
                 <p class="text-danger">Mohon Ganti Bukti Pembayaran</p>
               <?php else :; ?>
-                <p class="py-4"><button class="btn btn-danger">Sedang Diverifikasi</button></p>
+                <p class="py-4"><button class="btn btn-warning">Sedang Diverifikasi</button></p>
               <?php endif; ?>
             </center>
             <hr>

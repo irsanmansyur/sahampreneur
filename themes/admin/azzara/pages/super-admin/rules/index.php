@@ -116,7 +116,7 @@
                      });
                   }
                } else {
-                  swal("tidak jadi menghapus!", {
+                  swal("Tidak jadi dihapus!!", {
                      buttons: {
                         confirm: {
                            className: 'btn btn-success'

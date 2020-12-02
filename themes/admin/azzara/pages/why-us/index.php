@@ -50,7 +50,7 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">nama</th>
+                      <th scope="col">Nama</th>
                       <th scope="col">Value</th>
                       <th scope="col">Action</th>
                     </tr>
@@ -119,7 +119,7 @@
               });
             })
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

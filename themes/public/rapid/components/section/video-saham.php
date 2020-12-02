@@ -5,7 +5,7 @@
     <div class="container">
 
       <header class="section-header">
-        <h3>Video</h3>
+        <h3>Kategori Video</h3>
         <!-- <p>Beberapa kategori video menarik yang bisa anda dapatkan ketika menjadi anggota premiun di situs kami..!</p> -->
       </header>
       <div class="row justify-content-center">

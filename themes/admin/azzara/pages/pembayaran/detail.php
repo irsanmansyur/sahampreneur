@@ -49,7 +49,7 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Detail Data Pembayaran</div>
+              <div class="card-title">Detail Data Pembayaran User</div>
             </div>
             <div class="card-body">
               <div class="row">
@@ -162,7 +162,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-danger">Tolak!</button>
+              <button type="submit" class="btn btn-danger">Tolak !</button>
             </div>
           </form>
 

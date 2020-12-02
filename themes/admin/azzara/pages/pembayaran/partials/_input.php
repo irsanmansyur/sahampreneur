@@ -1,7 +1,7 @@
 <div class="form-group">
   <label for="user_id">Nama User</label>
   <select class="form-control" name="user_id" id="user_id">
-    <option value="">Select user</option>
+    <option value="">Select User</option>
     <?php foreach ($users as $user) : ?>
       <option value="<?= $user->id; ?>" <?= set_value("user_id") ==  $user->id ? " selected" : ($pembayaran->user_id ==  $user->id ? " selected" : ''); ?>><?= $user->name; ?></option>
     <?php endforeach; ?>

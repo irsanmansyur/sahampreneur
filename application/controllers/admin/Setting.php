@@ -23,12 +23,12 @@ class Setting extends Admin_Controller
         $data = ['value' => $value];
         $this->db->update("settings", $data, $where);
       }
-      $this->session->set_flashdata('success', "Setting Have Updated .!");
+      $this->session->set_flashdata('success', "Setting Berhasil diupdate !");
       return back();
     } else {
 
       $data = [
-        'page_title' => "Settings Aplikasi",
+        'page_title' => "Homepage Setting",
         'theme_admin' => $this->template->bacaThemes('admin'),
         'theme_public' => $this->template->bacaThemes('public'),
       ];

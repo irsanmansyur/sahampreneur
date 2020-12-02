@@ -44,8 +44,8 @@ class Register extends MY_Controller
         'trim|required|min_length[3]|max_length[20]',
         array(
           'required'      => 'Anda harus mengisi %s.',
-          'min_length'     => '%s Tidak boleh kurang dari 3 karakter.',
-          'max_length'     => '%s Tidak boleh lebih dari 20 karakter.',
+          'min_length'     => '%s tidak boleh kurang dari 3 karakter.',
+          'max_length'     => '%s tidak boleh lebih dari 20 karakter.',
         )
       );
       $this->form_validation->set_rules('nama_belakan', 'Nama Belakan', 'trim');
@@ -84,7 +84,7 @@ class Register extends MY_Controller
       'trim|required|matches[passwordsignin]',
       array(
         'required'      => 'Anda harus mengisi %s.',
-        'matches'     => 'Password Konfirmasi harus sama dengan password .'
+        'matches'     => 'Anda harus mengisi Confirm Password.'
       )
     );
     if ($this->input->post("codeReferal")) {

@@ -19,7 +19,7 @@ class Login extends MY_Controller
       'trim|required|valid_email',
       array(
         'required'      => 'Anda harus mengisi %s.',
-        'valid_email'     => 'harus email yang benar .'
+        'valid_email'     => 'Email harus valid.'
       )
     );
     $this->form_validation->set_rules(
@@ -69,7 +69,7 @@ class Login extends MY_Controller
           $this->session->set_flashdata('success', 'Sukses Login');
           return redirect('admin/dashboard');
         } else {
-          $this->session->set_flashdata('warning', "password salah!");
+          $this->session->set_flashdata('danger', "Password Salah!");
           redirect('auth/login');
         }
       } else {
@@ -77,7 +77,7 @@ class Login extends MY_Controller
         redirect('auth/login');
       }
     } else {
-      $this->session->set_flashdata('danger', 'Email tidak di temukan');
+      $this->session->set_flashdata('danger', 'Email tidak ditemukan');
       redirect('auth/login');
     }
   }

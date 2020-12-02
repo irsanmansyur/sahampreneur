@@ -22,7 +22,7 @@
              <ul class="nav">
                <li>
                  <a href="<?= base_url('admin/profile'); ?>">
-                   <span class="link-collapse">My Profile</span>
+                   <span class="link-collapse">Profil Saya</span>
                  </a>
                </li>
 

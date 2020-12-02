@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Register SahamPreneur</title>
+  <title>Register Sahampreneur</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- MATERIAL DESIGN ICONIC FONT -->
@@ -88,7 +88,7 @@
           <i class="zmdi zmdi-arrow-right"></i>
         </button>
         <br>
-        <span style="margin-top:20px">Sudah Punya akun .? <a href="<?= base_url("auth/login"); ?>">Login</a></span>
+        <span style="margin-top:20px">Sudah Punya Akun ? <a href="<?= base_url("auth/login"); ?>">Login</a></span>
       </form>
     </div>
   </div>

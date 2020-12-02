@@ -15,7 +15,7 @@ class User extends Admin_Controller
       'label' => 'Nama User',
       'rules' => 'required',
       'errors' => [
-        'required' => "Tidak bole kosong \n %s"
+        'required' => "Anda harus mengisi Nama"
       ],
     ],
     array(
@@ -28,7 +28,7 @@ class User extends Admin_Controller
       'label' => 'Password',
       'rules' => 'required',
       'errors' => array(
-        'required' => 'You must provide a %s.',
+        'required' => 'Anda harus mengisi %s.',
       ),
     ),
     array(
@@ -66,7 +66,7 @@ class User extends Admin_Controller
     $users = $this->user_model->all();
 
     $data = [
-      'page_title' => "List Users",
+      'page_title' => "List User",
       'users'  => $users,
     ];
 
@@ -140,7 +140,7 @@ class User extends Admin_Controller
     if ($this->form_validation->run() == false) {
 
       $data = [
-        'page_title' => "edit User",
+        'page_title' => "Edit User",
         'user_edit' => $user,
         'rules' => $rules,
       ];

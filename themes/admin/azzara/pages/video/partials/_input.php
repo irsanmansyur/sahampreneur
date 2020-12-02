@@ -16,7 +16,7 @@
 </div>
 <div class="form-group">
   <label for="title">Title Video</label>
-  <input class="form-control" id="title" placeholder="Enter name Video" name="title" value="<?= set_value("title", null) ?? $video->title ?>">
+  <input class="form-control" id="title" placeholder="Enter Title Video" name="title" value="<?= set_value("title", null) ?? $video->title ?>">
   <?= form_error("title", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
 <div class="form-group">
@@ -25,8 +25,8 @@
   <?= form_error("description", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
 <div class="form-group">
-  <label for="no_urut">No Urut Video</label>
-  <input type="number" class="form-control" id="no_urut" placeholder="Enter No Urut Video" name="no_urut" value="<?= set_value("no_urut", null) ?? $video->no_urut ?>">
+  <label for="no_urut">No. Urut Video</label>
+  <input type="number" class="form-control" id="no_urut" placeholder="Enter No. Urut Video" name="no_urut" value="<?= set_value("no_urut", null) ?? $video->no_urut ?>">
   <?= form_error("no_urut", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
 <div class="form-group">

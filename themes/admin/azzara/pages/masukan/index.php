@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Masukan Pesan</a>
+                <a href="#">Masukan / Keluhan Pesan</a>
               </li>
             </ul>
           </div>
@@ -106,7 +106,7 @@
           if (willDelete) {
             window.location = del.getAttribute('href');
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

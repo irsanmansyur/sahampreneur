@@ -12,7 +12,7 @@ class Kategori extends Admin_Controller
   {
     $kategories = $this->kategori_model->all();
     $data = [
-      'page_title' => "Daftar Kategori",
+      'page_title' => "Daftar Kategori Video",
     ];
     $this->template->load('admin', 'kategori/index', array_merge($data, compact(['kategories'])));
   }
@@ -33,7 +33,7 @@ class Kategori extends Admin_Controller
       return redirect("admin/kategori");
     }
     $data = [
-      'page_title' => "Tambah Kategori",
+      'page_title' => "Tambah Kategori Video",
     ];
     $this->template->load('admin', 'kategori/tambah', array_merge($data, compact(['kategories', 'kategori', "kategori"])));
   }
@@ -51,7 +51,7 @@ class Kategori extends Admin_Controller
       return redirect("admin/kategori");
     }
     $data = [
-      'page_title' => "Tambah Kategori",
+      'page_title' => "Edit Kategori Video",
     ];
     $this->template->load('admin', 'kategori/edit', array_merge($data, compact(['kategories', 'kategori', "kategori"])));
   }
@@ -60,7 +60,7 @@ class Kategori extends Admin_Controller
     $kategori = $this->kategori_model->first($id);
     if (!$kategori || $this->input->method() !== "post") return $this->not_permition();
     $kategori->delete();
-    echo json_encode(flashDataDB('success', $kategori->name . " Telah di hapus"));
+    echo json_encode(flashDataDB('success', $kategori->name . " berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {

@@ -39,7 +39,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">tambah</a>
+                <a href="#">List Video </a>
               </li>
             </ul>
           </div>
@@ -53,7 +53,6 @@
               </div>
               <div class="card-action">
                 <button class="btn btn-success" type="submit">Submit</button>
-                <button class="btn btn-danger" type="reset">Reset</button>
               </div>
             </form>
           </div>

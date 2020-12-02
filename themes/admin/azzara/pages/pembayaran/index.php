@@ -34,14 +34,13 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Pembayaran</a>
+                <a href="#">Pembayaran</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header  d-flex justify-content-between">
               <div class="card-title"><?= $page_title; ?></div>
-              <a href="<?= base_url('admin/pembayaran/tambah') ?>" class="btn btn-primary">Tambah</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -132,7 +131,7 @@
               });
             })
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

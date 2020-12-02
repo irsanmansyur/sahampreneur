@@ -16,7 +16,7 @@ class logout extends MY_Controller
     $this->session->unset_userdata('user_token');
     $this->session->unset_userdata('url');
 
-    $this->session->set_flashdata('success', 'Anda Berhasil Keluar!');
+    $this->session->set_flashdata('danger', 'Anda Berhasil Keluar!');
     redirect('auth/login');
   }
 }
