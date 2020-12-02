@@ -43,6 +43,7 @@ class Bank extends Admin_Controller
   }
   public function edit($id, $bank = null)
   {
+    // "edit data ";
     $bank = $this->bank_model->first($id);
     if (!$bank) return $this->not_permition();
 
