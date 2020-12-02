@@ -1,4 +1,6 @@
 .DS_Store
+application/config/database.php
+/application/config/database.php
 
 application/cache/*
 !application/cache/index.html
@@ -42,3 +44,5 @@ core/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+
