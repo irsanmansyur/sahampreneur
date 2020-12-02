@@ -57,7 +57,7 @@ class Bank extends Admin_Controller
     $data = [
       'page_title' => "Edit Bank",
     ];
-    $this->template->load('admin', 'bank/edit', array_merge($data, compact(['bankes', 'bank', "bank"])));
+    $this->template->load('admin', 'bank/edit', array_merge($data, compact(["bank"])));
   }
   public function delete($id, $bank = null)
   {
