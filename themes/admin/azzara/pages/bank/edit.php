@@ -35,17 +35,11 @@
               <li class="nav-item">
                 <a href=<?= base_url('admin/bank') ?>>Bank </a>
               </li>
-              <li class="separator">
-                <i class="flaticon-right-arrow"></i>
-              </li>
-              <li class="nav-item active">
-                <a href="#">tambah</a>
-              </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Form Edit data Bank</div>
+              <div class="card-title">Form Edit Data Bank</div>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
               <div class="card-body">
@@ -53,7 +47,6 @@
               </div>
               <div class="card-action">
                 <button class="btn btn-success" type="submit">Submit</button>
-                <button class="btn btn-danger" type="reset">Reset</button>
               </div>
             </form>
           </div>

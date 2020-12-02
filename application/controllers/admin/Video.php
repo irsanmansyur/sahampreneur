@@ -21,7 +21,7 @@ class Video extends Admin_Controller
 
     $config = array_merge($config, $this->paginateStyle());
     $data = [
-      'page_title' => "Daftar Video ",
+      'page_title' => "List Video ",
     ];
 
 
@@ -38,7 +38,7 @@ class Video extends Admin_Controller
     $data['pagination'] = $this->pagination->create_links();
 
 
-    $this->template->load('admin', 'video/index', array_merge($data, compact(['kategori', 'videos'])));
+    $this->template->load('admin', 'video/index', array_merge($data, compact(['videos'])));
   }
   public function kategori($id)
   {
@@ -87,7 +87,7 @@ class Video extends Admin_Controller
         $this->session->set_flashdata("video", "<div class='error text-danger'>Please Select Video</div>");
         return back();
       }
-      $file = $this->upload($video->name);
+      $file = $this->upload();
       if (!$file)  return back();
       $video->file = $file;
       $video->save();
@@ -143,7 +143,7 @@ class Video extends Admin_Controller
       return redirect("admin/video" . ($kategori ? "/kategori/{$kategori->id}" : ''));
     }
     $data = [
-      'page_title' => "Tambah Video",
+      'page_title' => "Edit Video",
     ];
     $this->template->load('admin', 'video/edit', array_merge($data, compact(['kategories', 'video',  "kategori"])));
   }
@@ -152,11 +152,11 @@ class Video extends Admin_Controller
     $video = $this->video_model->first($id);
     if (!$video || $this->input->method() !== "post") return $this->not_permition();
     $video->delete();
-    echo json_encode(flashDataDB('success', $video->title . " Telah di hapus"));
+    echo json_encode(flashDataDB('success', $video->title . " berhasil dihapus!"));
   }
   private function upload($filename = 'default.mp4')
   {
-    if ($_FILES['video']['name']) {
+    if (isset($_FILES['video']) && $_FILES['video']['name']) {
       $config['allowed_types'] = 'wmv|mp4|avi|mov|mkv';
       $config['max_size']      = '1338800';
       $config['upload_path'] = './assets/video/';

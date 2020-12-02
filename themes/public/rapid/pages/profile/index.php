@@ -30,7 +30,7 @@
                 <?php if ($status == 9) : ?>
                   <span class="badge badge-danger">Anda Belum melakukan Pembayaran</span>
                 <?php elseif ($status == 0) :; ?>
-                  <span class="badge badge-warning">Pembayaran anda belum di verifikasi</span>
+                  <span class="badge badge-warning">Pembayaran anda sedang diverifikasi</span>
                 <?php elseif ($status == 1) :; ?>
                   <span class="badge badge-primary">Member Premium</span>
                 <?php else :; ?>

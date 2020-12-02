@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-4 my-5">
           <!--Accordion wrapper-->
-          <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+          <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true" style="max-height: 75vh;overflow-y: scroll;">
 
             <?php foreach ($kategories as $kategori) : ?>
               <!-- Accordion card -->
@@ -49,7 +49,7 @@
                     <?php foreach ($kategori->videos() as $video) : ?>
                       <a id="video<?= $video->id; ?>" data-start="0" class="video-select list-group-item d-flex align-items-center" href="#videoPlay" data-url="<?= base_url("assets/video/{$video->file}"); ?>">
                         <span style="width: 45px;height:45px;border-radius:50%;background:black;text-align:center;padding-left:5px;margin-right:10px" class="d-flex align-items-center justify-content-center">
-                          <i class="fa fa-play" style="font-size:30px;color:blue margin-left :10px"></i>
+                          <i class="fa fa-play" style="font-size:30px;color:blue ;margin-left:10px"></i>
                         </span>
                         <?= $video->title; ?>
                       </a>

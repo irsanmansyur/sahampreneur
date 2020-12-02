@@ -34,19 +34,19 @@
               </li>
               <li class="nav-item">
 
-                <a href=<?= base_url('admin/video' . (isset($kategori) && $kategori ? "/kategori/{$kategori->id}" : '')); ?>>Kategori <?= (isset($kategori) && $kategori ? $kategori->name : ''); ?> </a>
+                <a href=<?= base_url('admin/video' . (isset($kategori) && $kategori ? "/kategori/{$kategori->id}" : '')); ?>>List Video  <?= (isset($kategori) && $kategori ? $kategori->name : ''); ?> </a>
               </li>
               <li class="separator">
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">tambah</a>
+                <a href="#">Tambah Video</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Form Tambah data Video</div>
+              <div class="card-title">Form Tambah Video</div>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
               <div class="card-body">
@@ -54,7 +54,6 @@
               </div>
               <div class="card-action">
                 <button class="btn btn-success" type="submit">Submit</button>
-                <button class="btn btn-danger" type="reset">Reset</button>
               </div>
             </form>
           </div>

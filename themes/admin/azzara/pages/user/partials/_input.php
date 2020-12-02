@@ -11,8 +11,8 @@
 <div class="row mt-3">
   <div class="col-md-6">
     <div class="form-group form-group-default">
-      <label>Name</label>
-      <input type="text" class="form-control" name="name" placeholder="Name" value="<?= set_value("name", null) ?? $user_edit->name ?? ""; ?>">
+      <label>Nama</label>
+      <input type="text" class="form-control" name="name" placeholder="Nama" value="<?= set_value("name", null) ?? $user_edit->name ?? ""; ?>">
     </div>
     <?= form_error("name", "<div class='text-danger pl-2'>", "</div>"); ?>
 
@@ -20,7 +20,7 @@
   <div class="col-md-6">
     <div class="form-group form-group-default">
       <label>Username</label>
-      <input type="text" class="form-control" name="username" placeholder="Name" value="<?= set_value("username", null) ?? $user_edit->username ?? ""; ?>">
+      <input type="text" class="form-control" name="username" placeholder="Username" value="<?= set_value("username", null) ?? $user_edit->username ?? ""; ?>">
     </div>
     <?= form_error("username", "<div class='text-danger pl-2'>", "</div>"); ?>
   </div>
@@ -29,10 +29,10 @@
 <div class="row mt-3">
   <div class="col-md-6">
     <div class="form-group form-group-default">
-      <label>status</label>
+      <label>Status</label>
       <select class="form-control" id="status" name="status">
-        <option disable>Select Status</option>
-        <option value="1" <?= set_value("status") == 1  ? "selected" : ''; ?>>aktif</option>
+        <option disable>Pilih Status</option>
+        <option value="1" <?= set_value("status") == 1  ? "selected" : ''; ?>>Aktif</option>
         <option value="0" <?= set_value("status") == 0 ? "selected" : ''; ?>>Non Aktif</option>
       </select>
     </div>
@@ -56,20 +56,21 @@
   <div class="col-md-6">
     <div class="form-group form-group-default">
       <label>Email</label>
-      <input type="email" class="form-control" name="email" placeholder="Name email" value="<?= set_value("email", null) ?? $user_edit->email ?? ''; ?>">
+      <input type="email" class="form-control" name="email" placeholder="Email" value="<?= set_value("email", null) ?? $user_edit->email ?? ''; ?>">
     </div>
     <?= form_error("email", "<div class='text-danger pl-2'>", "</div>"); ?>
   </div>
   <div class="col-md-6">
     <div class="form-group form-group-default">
-      <label>Jabatan / Khusus LEVEL Admin</label>
+      <label>Jabatan Admin ( Khusus Admin )
+      </label>
       <input class="form-control" name="jabatan" value="<?= set_value("jabatan", null) ??  $user_edit->jabatan ?? ''; ?>">
     </div>
     <?= form_error("jabatan", "<div class='text-danger pl-2'>", "</div>"); ?>
   </div>
 </div>
 <?php if ($user_edit->name) : ?>
-  <h3 class="text-danger mt-5">Kosongkan password Jika tidak ingin mengubah</h3>
+  <h3 class="text-danger mt-5">Kosongkan password jika tidak ingin diubah</h3>
 <?php endif; ?>
 <div class="row mt-3">
   <div class="col-6">
@@ -81,7 +82,7 @@
   </div>
   <div class="col-6">
     <div class="form-group form-group-default">
-      <label>Password Refeat</label>
+      <label>Confirm Password</label>
       <input type="password" class="form-control" name="confirmpassword">
     </div>
     <?= form_error("confirmpassword", "<div class='text-danger pl-2'>", "</div>"); ?>

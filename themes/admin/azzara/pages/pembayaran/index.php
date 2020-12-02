@@ -34,14 +34,13 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Pembayaran</a>
+                <a href="#">Pembayaran</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header  d-flex justify-content-between">
               <div class="card-title"><?= $page_title; ?></div>
-              <a href="<?= base_url('admin/pembayaran/tambah') ?>" class="btn btn-primary">Tambah</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -50,7 +49,11 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Nama User</th>
+                      <th scope="col">Referall </th>
                       <th scope="col">Tanggal Upload</th>
+                      <?php if (isset($statusBayar)) : ?>
+                        <th scope="col"><?= $statusBayar ? "Tanggal di Verifikasi" : "Tanggal di Tolak"; ?></th>
+                      <?php endif; ?>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -63,9 +66,18 @@
                       <tr class="key_me">
                         <td><?= $no++; ?></td>
                         <td><?= $pembayaran->user->name; ?></td>
-                        <td><?= date("d-m-Y", strtotime($pembayaran->created_at)); ?></td>
                         <td>
-
+                          <?php if ($pembayaran->user->referal()) : ?>
+                            <?= $pembayaran->user->referal()->name; ?> || <?= $pembayaran->user->referal()->username; ?>
+                          <?php else :; ?>
+                            Kosong
+                          <?php endif; ?>
+                        </td>
+                        <td><?= date("d-m-Y", strtotime($pembayaran->created_at)); ?></td>
+                        <?php if (isset($statusBayar)) : ?>
+                          <td><?= date("d-m-Y", strtotime($pembayaran->updated_at)); ?></td>
+                        <?php endif; ?>
+                        <td>
                           <a href="<?= base_url('admin/pembayaran/detail/' . $pembayaran->id); ?>" class="btn btn-info">
                             <span class="btn-label">
                               <i class="fa fa-info"></i>
@@ -127,7 +139,7 @@
               });
             })
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

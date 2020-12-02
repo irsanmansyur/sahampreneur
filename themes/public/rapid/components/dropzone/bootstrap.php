@@ -6,7 +6,7 @@
 </form>
 <center class="mt-2">
   <?php if ($pembayaran) : ?>
-    <button id="submit-all" class="btn btn-warning">Ganti Bukti Pembayaran</button>
+    <button id="submit-all" class="btn btn-danger">Ganti Bukti Pembayaran</button>
   <?php else :; ?>
     <button id="submit-all" class="btn btn-primary">Upload Bukti Pembayaran</button>
   <?php endif; ?>
@@ -45,7 +45,7 @@
       });
       this.on("success", function(file, responseText) {
         document.querySelector("#dz-preview").setAttribute('src', ImgFile);
-        swal("Bukti Transfer Di kirim!", "Silahkan cek Status pembayaran anda dalam max 2X 24 jam!", "success")
+        swal("Bukti Transfer Berhasil Dikirim!", "Silahkan periksa Status pembayaran anda dalam max 2 x 24 jam!", "success")
           .then((value) => {
             location.reload();
           });;

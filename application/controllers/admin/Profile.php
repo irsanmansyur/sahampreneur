@@ -31,7 +31,7 @@ class Profile extends Admin_Controller
       $this->form_validation->set_rules("jabatan", "User Jabatan", "required|min_length[4]");
     if ($this->form_validation->run() == false) {
       $data = [
-        'page_title' => "Profil User",
+        'page_title' => "Identitas User",
         "userMe" => $user
       ];
       $this->template->load('admin', 'user/profile', $data);
@@ -53,7 +53,7 @@ class Profile extends Admin_Controller
       $id = $user->id;
       $this->db->where('id', $id)->update("users", $dt);
       $this->session->set_flashdata('success', "profile Berhasil di ubah.!");
-      redirect('admin/dashboard');
+      return back();
     }
   }
 

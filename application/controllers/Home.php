@@ -23,7 +23,7 @@ class Home extends MY_Controller
   {
     $this->load->model(["testimonial_model", "kategori_model", "user_model", 'why_us_model']);
     $whyUses = $this->why_us_model->all();
-    $kategories = $this->kategori_model->all(6);
+    $kategories = $this->kategori_model->all(12 );
     $admins = $this->user_model->isAdmin(8);
 
     $testimonials = $this->testimonial_model->all(10);

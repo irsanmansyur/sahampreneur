@@ -28,13 +28,13 @@ class Why_us extends Admin_Controller
   public function index()
   {
     if (!is_login()) {
-      $this->session->set_flashdata("danger", "Silahkan Login Terlebih dahulu!");
+      $this->session->set_flashdata("danger", "Silahkan Login Terlebih Dahulu!");
       redirect("/login");
     };
 
     $whyUses = $this->why_us_model->all();
     $data = [
-      "page_title" => "Selamat Datang",
+      "page_title" => "Homepage Statistic",
     ];
     $this->template->load('admin', 'why-us/index', array_merge($data, compact(['whyUses'])));
   }
@@ -49,7 +49,7 @@ class Why_us extends Admin_Controller
       return redirect("admin/why_us");
     }
     $data = [
-      'page_title' => "Tambah Why Us",
+      'page_title' => "Tambah Homepage Statistic",
     ];
     $this->template->load('admin', 'why-us/tambah', array_merge($data, compact(['whyUs'])));
   }
@@ -61,11 +61,11 @@ class Why_us extends Admin_Controller
     $this->form_validation->set_rules($whyUs->getRules());
     if ($this->form_validation->run()) {
       $whyUs->update();
-      flashDataDB("success", "Why us telah di Edit");
+      flashDataDB("success", "Homepage Statistic telah di Edit");
       return redirect("admin/why_us");
     }
     $data = [
-      'page_title' => "Edit Why us",
+      'page_title' => "Edit Homepage Statistic",
     ];
     $this->template->load('admin', 'why-us/edit', array_merge($data, compact(['whyUs'])));
   }
@@ -74,6 +74,6 @@ class Why_us extends Admin_Controller
     $why_us = $this->why_us_model->first($id);
     if (!$why_us) return $this->not_permition();
     $why_us->delete();
-    echo json_encode(flashDataDB('success', "Why Us Telah di hapus"));
+    echo json_encode(flashDataDB('success', "Homepage Statistic berhasil dihapus!"));
   }
 }

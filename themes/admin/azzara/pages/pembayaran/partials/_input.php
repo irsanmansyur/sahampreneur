@@ -1,9 +1,9 @@
 <div class="form-group">
   <label for="user_id">Nama User</label>
   <select class="form-control" name="user_id" id="user_id">
-    <option value="">Select user</option>
-    <?php foreach ($users as $user) : ?>
-      <option value="<?= $user->id; ?>" <?= set_value("user_id") ==  $user->id ? " selected" : ($pembayaran->user_id ==  $user->id ? " selected" : ''); ?>><?= $user->name; ?></option>
+    <option value="">Select User</option>
+    <?php foreach ($users as $userss) : ?>
+      <option value="<?= $userss->id; ?>" <?= set_value("user_id") ==  $userss->id ? " selected" : ($pembayaran->user_id ==  $userss->id ? " selected" : ''); ?>><?= $userss->name; ?></option>
     <?php endforeach; ?>
   </select>
   <?= form_error("user_id", "<div class='danger text-danger'>", "</div>"); ?>

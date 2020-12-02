@@ -34,14 +34,14 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">list User</a>
+                <a href="#">User Setting</a>
               </li>
             </ul>
           </div>
           <div class="card">
             <div class="card-header  d-flex justify-content-between">
               <div class="card-title"><?= $page_title; ?></div>
-              <a href="<?= base_url('admin/user/add'); ?>" class="btn btn-primary">Add</a>
+              <a href="<?= base_url('admin/user/add'); ?>" class="btn btn-primary">Tambah</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -49,8 +49,9 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">nama User</th>
+                      <th scope="col">Nama User</th>
                       <th scope="col">Referal</th>
+                      <th scope="col">Tanggal Registrasi</th>
                       <!-- <th scope="col">Gambar</th> -->
                       <!-- <th scope="col">Set Access Role</th> -->
                       <th scope="col">Action</th>
@@ -70,6 +71,8 @@
                             Kosong
                           <?php endif; ?>
                         </td>
+                        <td><?= date("d,M Y", strtotime($user->created_at)); ?></td>
+
                         <!-- <td><img src="<?= base_url('assets/img/profile/' . $user->profile); ?>" alt="" style="width:100px;height:100px"> </td> -->
                         <!-- <td>
                           <a href="<?= base_url('super-admin/access/type/' . $user->id . "/user"); ?>" class="btn btn-secondary btn-sm rounded">Change Accesss</a>
@@ -116,9 +119,21 @@
           }
         }).then((willDelete) => {
           if (willDelete) {
-            window.location = del.getAttribute('href');
+            let url = del.getAttribute('href');
+            fetch(url, {
+              method: "post"
+            }).then(res => res.json()).then(res => {
+              res.status && del.closest("tr").remove();
+              swal(res.message, {
+                buttons: {
+                  confirm: {
+                    className: `btn btn-${res.status ? "success" : "danger"}`
+                  }
+                }
+              });
+            })
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

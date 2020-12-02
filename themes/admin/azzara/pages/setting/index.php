@@ -16,11 +16,11 @@
       <div class="content">
         <div class="page-inner">
           <div class="page-header">
-            <h4 class="page-title">Mengatur aplikasi</h4>
+            <h4 class="page-title">Homepage Setting</h4>
             <ul class="breadcrumbs">
               <li class="nav-home">
                 <a href="<?= base_url(); ?>">
-                  <i class="flaticon-home">Home</i>
+                  <i class="flaticon-home"></i>
                 </a>
               </li>
               <li class="separator">
@@ -33,7 +33,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item">
-                <a href="#">Setting Aplikasi</a>
+                <a href="#">Homepage Setting</a>
               </li>
             </ul>
           </div>
@@ -70,8 +70,8 @@
                 <?php endforeach; ?>
               </div>
               <div class="card-action">
-                <button class="btn btn-success" type="submit">Submit</button>
-                <button class="btn btn-danger" type="reset">Reset</button>
+              <button class="btn btn-success" type="submit">Submit</button>
+  
               </div>
             </form>
 

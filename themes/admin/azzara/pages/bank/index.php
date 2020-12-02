@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Daftar Bank</a>
+                <a href="#">Bank</a>
               </li>
             </ul>
           </div>
@@ -50,7 +50,7 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Nama Bank</th>
-                      <th scope="col">Nama Pemilik</th>
+                      <th scope="col">Kode Rekening</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Action</th>
                     </tr>
@@ -122,7 +122,7 @@
               });
             })
           } else {
-            swal("tidak jadi menghapus!", {
+            swal("Tidak jadi dihapus!", {
               buttons: {
                 confirm: {
                   className: 'btn btn-success'

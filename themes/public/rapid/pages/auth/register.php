@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Form Pendaftaran Klient Sahampreneur</title>
+  <title>Register Sahampreneur</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- MATERIAL DESIGN ICONIC FONT -->
@@ -23,11 +23,18 @@
     80vh;position:relative">
       <div class="image-holder d-flex align-items-center" style="min-height: 
     80vh">
+
         <img src="<?= base_url("assets\img\logo\sahampreneur.png") ?>">
       </div>
 
       <form method="post" id="formMe">
-        <h3>Form pendaftaran</h3>
+        <a href="<?= base_url(); ?>">
+          <svg style="width: 30px;height:30px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+          </svg><b class="pl-2">Beranda</b>
+        </a>
+
+        <h3 class="mt-3">Form pendaftaran</h3>
         <div class="form-group " style=" margin-bottom: 25px;">
           <div class="row">
             <div class="col-6">
@@ -35,7 +42,7 @@
               <?= form_error("nama_depan", "<div class='text-danger'>", "</div>"); ?>
             </div>
             <div class="col-6">
-              <input type="text" style="width:100%;margin-bottom :3px" value="<?= set_value("nama_belakan"); ?>" name="nama_belakan" placeholder="Nama Belakan" class="form-control">
+              <input type="text" style="width:100%;margin-bottom :3px" value="<?= set_value("nama_belakan"); ?>" name="nama_belakan" placeholder="Nama Belakang" class="form-control">
               <?= form_error("nama_belakan", "<div class='text-danger'>", "</div>"); ?>
             </div>
           </div>
@@ -86,7 +93,7 @@
           <i class="zmdi zmdi-arrow-right"></i>
         </button>
         <br>
-        <span style="margin-top:20px">Sudah Punya akun .? <a href="<?= base_url("auth/login"); ?>">Login</a></span>
+        <span style="margin-top:20px">Sudah Punya Akun ? <a href="<?= base_url("auth/login"); ?>">Login</a></span>
       </form>
     </div>
   </div>
@@ -96,13 +103,13 @@
     <div class="modal-dialog modal-xl h-100" role="document">
       <div class="modal-content  h-75">
         <div class="modal-header" style="justify-content: space-between;">
-          <h5 class="modal-title" id="exampleModalLongTitle">Term And Policy</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Terms and Conditions</h5>
           <button type="button" style="width:50px;margin:0;background:transparent" name="close_modal" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="font-size:40px;color:black;">&times;</span>
           </button>
         </div>
         <div class="modal-body h-100">
-          <iframe src="https://drive.google.com/file/d/1uSTLkKHvYvXoANBMEJNe1zke84KRcz28/preview" style="width:100%;height:100%" frameborder="0"></iframe>
+          <iframe src="https://drive.google.com/file/d/1_AdVXC0GyakVGCWjaIoCepJpHd6j3Odb/preview" style="width:100%;height:100%" frameborder="0"></iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary noaccept" data-dismiss="modal">Close</button>
@@ -122,7 +129,7 @@
           </button>
         </div>
         <div class="modal-body h-100">
-          <iframe src="https://drive.google.com/file/d/19nws66axlYDZSOjegy0oXBS-S_akyB52/preview" style="width:100%;height:100%" frameborder="0"></iframe>
+          <iframe src="https://drive.google.com/file/d/1b7QrcCV_UWy0zDM2EPcsVu3Z8k5pA42_/preview" style="width:100%;height:100%" frameborder="0"></iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary noaccept" data-dismiss="modal">Close</button>

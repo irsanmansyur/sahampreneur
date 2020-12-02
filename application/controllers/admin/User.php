@@ -15,7 +15,7 @@ class User extends Admin_Controller
       'label' => 'Nama User',
       'rules' => 'required',
       'errors' => [
-        'required' => "Tidak bole kosong \n %s"
+        'required' => "Anda harus mengisi Nama"
       ],
     ],
     array(
@@ -28,7 +28,7 @@ class User extends Admin_Controller
       'label' => 'Password',
       'rules' => 'required',
       'errors' => array(
-        'required' => 'You must provide a %s.',
+        'required' => 'Anda harus mengisi %s.',
       ),
     ),
     array(
@@ -66,7 +66,7 @@ class User extends Admin_Controller
     $users = $this->user_model->all();
 
     $data = [
-      'page_title' => "List Users",
+      'page_title' => "List User",
       'users'  => $users,
     ];
 
@@ -99,7 +99,7 @@ class User extends Admin_Controller
         $accessRole['jabatan'] = $jabatan ? $jabatan : "Karyawan";
       }
       $this->db->insert("access_role_user", $accessRole);
-      $this->session->set_flashdata('success', 'Pendaftaran berhasil');
+      $this->session->set_flashdata('success', 'Pendaftaran Berhasil!');
       redirect(base_url('admin/user/list'));
     } else {
       $rules = $this->db->from("rules")->where_not_in("id", [1])->get()->result();
@@ -140,7 +140,7 @@ class User extends Admin_Controller
     if ($this->form_validation->run() == false) {
 
       $data = [
-        'page_title' => "edit User",
+        'page_title' => "Edit User",
         'user_edit' => $user,
         'rules' => $rules,
       ];
@@ -172,6 +172,18 @@ class User extends Admin_Controller
       }
       $this->session->set_flashdata('success', 'Edit Data User berhasil');
       redirect(base_url('admin/user/list'));
+    }
+  }
+
+  public function delete($id, $bank = null)
+  {
+    $user = $this->user_model->first($id);
+
+    if (!$user || $this->input->method() != "post") {
+      echo  json_encode(["status" => false, 'message' => "Gagal!"]);
+    } else {
+      $delete =  $user->delete();
+      echo json_encode(flashDataDB('success', $user->name . " berhasil dihapus!"));
     }
   }
   private function upload($filename = 'default.jpg')

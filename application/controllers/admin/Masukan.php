@@ -16,7 +16,7 @@ class Masukan extends Admin_Controller
   {
     $masukans = $this->masukan_model->all();
     $data = [
-      'page_title' => "Daftar Masukan",
+      'page_title' => "List Masukan / Keluhan Pesan",
     ];
     $this->template->load('admin', 'masukan/index', array_merge($data, compact(['masukans'])));
   }

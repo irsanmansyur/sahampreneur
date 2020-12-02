@@ -17,10 +17,14 @@
 
           <!-- <h2>Rapid Solutions<br>for Your <span>Business!</span></h2> -->
           <h2>SAHAMPRENEUR</h2>
-          <h5>“Kasih dia seekor ikan, dia bisa makan untuk sehari. Ajari dia cara memancing dan dia bisa makan untuk seumur hidup.”</h5>
+          <h5>
+            <b>Apakah Kalian Siap untuk Investasi dan Trading Mandiri ?</b>
+            <br>
+            <i>“Kasih dia seekor ikan, dia bisa makan untuk sehari. Ajari dia cara memancing dan dia bisa makan untuk seumur hidup.”</i>
+          </h5>
           <div>
             <?php if (!is_login()) : ?>
-              <a href="<?= base_url("register/user"); ?>" class="btn-get-started scrollto">Registrasi</a>
+              <a href="<?= base_url("register/user"); ?>" class="btn-get-started scrollto">Yuk Belajar !</a>
             <?php endif; ?>
           </div>
         </div>
@@ -53,7 +57,7 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
             <h3 class="cta-title">Kalkulator Harga Wajar Saham</h3>
-            <p class="cta-text">Klik disini untuk menghitung saham kamu!<br>
+            <p class="cta-text">Klik Disini untuk menghitung harga wajar saham kamu !<br>
               Kamu bisa mengetahui apakah saham tersebut dalam kategori murah atau mahal.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">

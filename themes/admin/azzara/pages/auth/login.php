@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title><?= $page_title; ?></title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <link rel="icon" href="<?= $thema_folder; ?>assets/img/icon.ico" type="image/x-icon" />
+
+  <link rel="icon" href="<?= base_url("assets/img/logo/sahampreneur.ico"); ?>" type="image/x-icon" />
+
 
   <!-- Fonts and icons -->
   <script src="<?= $thema_folder; ?>assets/js/plugin/webfont/webfont.min.js"></script>
@@ -30,8 +32,20 @@
 </head>
 
 <body class="login">
-  <div class="wrapper wrapper-login">
+
+  <div class="wrapper wrapper-login flex-column">
+
+    <div class="container text-center">
+      <img src="/assets/img/logo/sahampreneur.png" alt="" class="img-fluid" style="padding: 0;margin-top: -20px;max-height: 91px;">
+    </div>
     <div class="container container-login animated fadeIn">
+      <div class="d-flex align-items-center">
+        <a href="<?= base_url(); ?>" class="d-flex align-items-center">
+          <svg style=" width: 30px;height:30px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+          </svg><b class="pl-2">Beranda</b>
+        </a>
+      </div>
       <h3 class="text-center">SIGN IN</h3>
 
       <?php $this->load->view($thema_load . "partials/_alert.php"); ?>
@@ -75,6 +89,15 @@
   <script src="<?= $thema_folder; ?>assets/js/core/popper.min.js"></script>
   <script src="<?= $thema_folder; ?>assets/js/core/bootstrap.min.js"></script>
   <script src="<?= $thema_folder; ?>assets/js/ready.js"></script>
+  <script src="<?= $thema_folder; ?>assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+  <script>
+    window.setTimeout(function() {
+      $(".alert").fadeTo(500, 0).slideUp(500, function() {
+        $(this).remove();
+      });
+    }, 3000);
+  </script>
 </body>
 
 </html>

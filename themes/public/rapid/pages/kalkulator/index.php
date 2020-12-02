@@ -31,7 +31,7 @@
         </div>
         <div class="tab-pane fade" id="nav-panduan" role="tabpanel" aria-labelledby="nav-panduan-tab">
           <div class="min-vh-100">
-            <iframe src="https://drive.google.com/file/d/1OrkGSNyQZV8ckzNWFb236Robdlcg7bGZ/preview" style="width:100%;min-height:70vh" frameborder="0"></iframe>
+            <iframe src="https://drive.google.com/file/d/1fPTRg5AxhQRb122Qm7cgfgxwXowZslcw/preview" style="width:100%;min-height:70vh" frameborder="0"></iframe>
           </div>
         </div>
       </div>

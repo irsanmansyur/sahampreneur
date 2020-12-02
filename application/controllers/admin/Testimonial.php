@@ -15,7 +15,7 @@ class Testimonial extends Admin_Controller
     $testimonials = $this->testimonial_model->all();
 
     $data = [
-      'page_title' => "Daftar Testimonial User",
+      'page_title' => "List Testimonial User",
     ];
     $this->template->load('admin', 'testimonial/index', array_merge($data, compact(['testimonials'])));
   }
@@ -35,7 +35,7 @@ class Testimonial extends Admin_Controller
       return redirect("admin/testimonial");
     }
     $data = [
-      'page_title' => "Tambah Testimonial Video",
+      'page_title' => "Tambah Testimonial",
     ];
     $this->template->load('admin', 'testimonial/tambah', array_merge($data, compact(['testimonial', "users"])));
   }
@@ -56,7 +56,7 @@ class Testimonial extends Admin_Controller
       return redirect("admin/testimonial");
     }
     $data = [
-      'page_title' => "Edit Testimonial dari User",
+      'page_title' => "Edit Testimonial User",
     ];
     $this->template->load('admin', 'testimonial/edit', array_merge($data, compact(['testimonial', "users"])));
   }
@@ -66,7 +66,7 @@ class Testimonial extends Admin_Controller
 
     if (!$testimonial) return $this->not_permition();
     $testimonial->delete();
-    echo json_encode(flashDataDB('success', "Testimonial dari " . $testimonial->user()->name . " Telah di hapus"));
+    echo json_encode(flashDataDB('success', "Testimonial dari " . $testimonial->user()->name . " berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {

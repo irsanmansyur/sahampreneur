@@ -34,7 +34,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item active">
-                <a href="#">Profiles User</a>
+                <a href="#">Identitas User</a>
               </li>
             </ul>
           </div>
@@ -42,7 +42,7 @@
             <div class="col-md-8">
               <div class="card card-with-nav">
                 <div class="card-header">
-                  <h3 class="mt-4">Identitas user</h3>
+                  <h3 class="mt-4">Identitas User</h3>
                   <?php echo validation_errors(); ?>
                 </div>
                 <div class="card-body">
@@ -68,7 +68,7 @@
                         <div class="form-group form-group-default">
                           <label>status</label>
                           <select class="form-control" id="status" name="status">
-                            <option <?= $userMe->status == '1' ? 'selected' : ''; ?> value="1">aktif</option>
+                            <option <?= $userMe->status == '1' ? 'selected' : ''; ?> value="1">Aktif</option>
                             <option value="0" <?= $userMe->status == '0' ? 'selected' : ''; ?>>Non Aktif</option>
                           </select>
                         </div>
@@ -77,7 +77,7 @@
                         <div class="col-md-12">
                           <div class="form-group form-group-default">
                             <div class="form-group form-group-default">
-                              <label>Jabatan / Khusus LEVEL Admin</label>
+                              <label>Jabatan Admin ( Khusus Admin )</label>
                               <input class="form-control" name="jabatan" value="<?= set_value("jabatan", null) ??  $userMe->jabatan ?? ''; ?>">
                             </div>
                             <?= form_error("jabatan", "<div class='text-danger pl-2'>", "</div>"); ?>
@@ -101,7 +101,7 @@
                           <label>Password</label>
                           <input type="password" class="form-control" name="password">
                         </div>
-                        <span class="text-danger">Kosonkan Jika tidak ingin di ubah</span>
+                        <span class="text-danger">Kosongkan jika tidak ingin diubah</span>
 
                       </div>
                     </div>
@@ -123,7 +123,6 @@
 
                     <div class="text-right mt-3 mb-3">
                       <button class="btn btn-success" type="submit">Save</button>
-                      <button class="btn btn-danger" type="resets">Reset</button>
                     </div>
                 </div>
               </div>

@@ -49,7 +49,7 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Detail data Pembayaran</div>
+              <div class="card-title">Detail Data Pembayaran User</div>
             </div>
             <div class="card-body">
               <div class="row">
@@ -67,7 +67,7 @@
                         </div>
                       </div>
                       <div class="col-6">
-                        <h2>Pembayaran pada :</h2>
+                        <h2>Pembayaran Pada :</h2>
                         <div class="row">
                           <div class="col-6 py-2">Tanggal </div>
                           <div class="col-6">: <?= date("d-m-Y", strtotime($pembayaran->created_at)); ?></div>
@@ -94,7 +94,7 @@
                       <?php if ($pembayaran->status != "2") : ?>
                         <p class="text-center py-3">
                           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#tolak">
-                            Tolak Pembayaran!
+                            Tolak Pembayaran !
                           </button>
                         </p>
                         <form action="" method="post" class="text-center py-5">
@@ -117,7 +117,7 @@
                 </div>
                 <div class="col-md-5">
                   <div class="card">
-                    <h3 class="text-center mt-3">Details User Pembayar :</h3>
+                    <h3 class="text-center mt-3">Detail User Pembayar</h3>
                     <center>
                       <div class="avatar avatar-xl">
                         <img src="<?= $pembayaran->user()->takeProfile(); ?>" alt="..." class="avatar-img rounded-circle">
@@ -130,8 +130,12 @@
                       <div class="col-6">: <?= $pembayaran->user()->email; ?></div>
                       <div class="col-6">Username</div>
                       <div class="col-6">: <?= $pembayaran->user()->username; ?></div>
-                      <div class="col-6">Register Pada</div>
+                      <div class="col-6">Tanggal Registrasi</div>
                       <div class="col-6">: <?= date("d-m-Y", strtotime($pembayaran->user()->created_at)); ?></div>
+                      <?php if ($pembayaran->status === 1) : ?>
+                        <div class="col-6">Tanggal Verifikasi</div>
+                        <div class="col-6">: <?= date("d-m-Y", strtotime($pembayaran->user()->created_at)); ?></div>
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>
@@ -162,7 +166,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-danger">Tolak!</button>
+              <button type="submit" class="btn btn-danger">Tolak !</button>
             </div>
           </form>
 

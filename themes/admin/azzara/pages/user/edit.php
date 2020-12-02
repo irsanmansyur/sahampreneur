@@ -27,7 +27,7 @@
                 <i class="flaticon-right-arrow"></i>
               </li>
               <li class="nav-item">
-                <a href=<?= base_url('admin/user/list'); ?>>User List</a>
+                <a href=<?= base_url('admin/user/list'); ?>>User Setting</a>
               </li>
 
               <li class="separator">
@@ -42,7 +42,7 @@
             <div class="col-md-8">
               <div class="card card-with-nav">
                 <div class="card-header">
-                  <h3 class="mt-4">Identitas user</h3>
+                  <h3 class="mt-4">Edit User</h3>
                 </div>
                 <div class="card-body">
                   <form action="" method="post" enctype="multipart/form-data">
@@ -50,7 +50,6 @@
 
                     <div class="text-right mt-3 mb-3">
                       <button class="btn btn-success" type="submit">Update</button>
-                      <button class="btn btn-danger" type="resets">Reset</button>
                     </div>
                   </form>
                 </div>
