@@ -52,7 +52,6 @@
                 <?php $this->load->view($thema_load . "pages/video/partials/_input.php"); ?>
               </div>
               <div class="card-action">
-                <button class="btn btn-danger" type="reset">Reset</button>
                 <button class="btn btn-success" type="submit">Submit</button>
               </div>
             </form>

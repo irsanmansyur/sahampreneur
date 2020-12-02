@@ -48,7 +48,6 @@
                   <form action="" method="post" enctype="multipart/form-data">
                     <?php $this->load->view($thema_load . "pages/user/partials/_input.php"); ?>
                     <div class="text-right mt-3 mb-3">
-                      <button class="btn btn-danger" type="resets">Reset</button>
                       <button class="btn btn-success" type="submit">Save</button>
                     </div>
                 </div>

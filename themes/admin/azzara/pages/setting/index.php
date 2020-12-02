@@ -70,7 +70,6 @@
                 <?php endforeach; ?>
               </div>
               <div class="card-action">
-              <button class="btn btn-danger" type="reset">Reset</button>
               <button class="btn btn-success" type="submit">Submit</button>
   
               </div>

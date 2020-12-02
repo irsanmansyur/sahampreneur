@@ -23,7 +23,7 @@ class Setting extends Admin_Controller
         $data = ['value' => $value];
         $this->db->update("settings", $data, $where);
       }
-      $this->session->set_flashdata('success', "Setting Have Updated .!");
+      $this->session->set_flashdata('success', "Setting Berhasil diupdate !");
       return back();
     } else {
 
