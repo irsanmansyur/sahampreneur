@@ -32,7 +32,7 @@
                <div class="col-md-6  wow bounceInUp aos-init aos-animate align-self-stretch my-2" data-aos="zoom-in" data-aos-delay="100">
                  <div class="d-flex justify-content-center flex-column rounded-lg my-2 text-center h-100" style="background-color: #f5f8fd;">
                    <div class="my-3">
-                     <img src="<?= base_url('assets/img/icon/video.jpeg'); ?>" alt="video" class="rounded-circle">
+                     <img src="<?= base_url('assets/img/icon/video.jpeg'); ?>" alt="video" class="rounded-circle" style="width:110;height:100px">
                    </div>
                    <h5 class=" font-weight-bold">10+ Video Online Course</h5>
                    <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
@@ -41,9 +41,9 @@
                <div class="col-md-6  wow bounceInUp aos-init aos-animate align-self-stretch my-2" data-aos="zoom-in" data-aos-delay="100">
                  <div class="d-flex justify-content-center flex-column rounded-lg my-2 text-center h-100" style="background-color: #f5f8fd;">
                    <div class="my-3">
-                     <img src="<?= base_url('assets/img/icon/kalkulator.jpeg'); ?>" alt="video" class="rounded-circle">
+                     <img src="<?= base_url('assets/img/icon/kalkulator.jpeg'); ?>" alt="video" class="rounded-circle" style="width:110;height:100px">
                    </div>
-                   <h5 class=" font-weight-bold display-5">Kalkulator Perhitungan Harga Wajar Saham <br/>( Value Investing )
+                   <h5 class=" font-weight-bold display-5">Kalkulator Perhitungan Harga Wajar Saham <br />( Value Investing )
                    </h5>
                    <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
                  </div>
@@ -51,7 +51,7 @@
                <div class="col-md-6  wow bounceInUp aos-init aos-animate align-self-stretch my-2" data-aos="zoom-in" data-aos-delay="100">
                  <div class="d-flex justify-content-center flex-column rounded-lg my-2 text-center h-100" style="background-color: #f5f8fd;">
                    <div class="my-3">
-                     <img src="<?= base_url('assets/img/icon/komunitas.jpeg'); ?>" alt="video" class="rounded-circle">
+                     <img src="<?= base_url('assets/img/icon/komunitas.jpeg'); ?>" alt="video" class="rounded-circle" style="width:110;height:100px">
                    </div>
                    <h5 class=" font-weight-bold">Komunitas Private Sahampreneur lewat Telegram</h5>
                    <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
@@ -60,7 +60,7 @@
                <div class="col-md-6  wow bounceInUp aos-init aos-animate align-self-stretch my-2" data-aos="zoom-in" data-aos-delay="100">
                  <div class="d-flex justify-content-center flex-column rounded-lg my-2 text-center h-100" style="background-color: #f5f8fd;">
                    <div class="my-3">
-                     <img src="<?= base_url('assets/img/icon/posisi.jpeg'); ?>" alt="video" class="rounded-circle">
+                     <img src="<?= base_url('assets/img/icon/posisi.jpeg'); ?>" alt="video" class="rounded-circle" style="width:110;height:100px">
                    </div>
                    <h5 class="  font-weight-bold">Posisi / Titik, Langkah dan Strategy Jual Beli Saham Felix Tohanda</h5>
                    <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
