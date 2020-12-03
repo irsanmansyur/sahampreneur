@@ -86,7 +86,7 @@
         </div>
         <div class="form-check ">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" name="accept">
-          <label class="form-check-label" id="cekAccept" style="color: black;">Saya setuju dengan <a href="#" data-toggle="modal" data-target="#exampleModalLong">Term and Conditions</a> dan <a href="#" data-toggle="modal" data-target="#exampleModalLongPrivacy">Privacy Policy</a> Sahampreneur.</label>
+          <label class="form-check-label" id="cekAccept" style="color: black;">Saya setuju dengan <a href="#" data-toggle="modal" data-target="#exampleModalLong">Terms and Conditions</a> dan <a href="#" data-toggle="modal" data-target="#exampleModalLongPrivacy">Privacy Policy</a> Sahampreneur.</label>
           <?= form_error("accept", "<div class='text-danger'>", "</div>"); ?>
         </div>
         <button type="submit" id="registerNow">Daftar

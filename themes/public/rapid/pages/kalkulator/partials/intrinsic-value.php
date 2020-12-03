@@ -3,6 +3,7 @@
     <div class="col-md-7">
       <div class="card ">
         <div class="card-body">
+        <p><b>(Harus konsisten dengan Satuan yang dipakai, Biasanya "Jutaan")</b></p>
           <div class="table-responsive-xl">
             <table class="table">
               <tbody>

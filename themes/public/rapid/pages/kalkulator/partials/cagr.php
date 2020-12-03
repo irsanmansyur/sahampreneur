@@ -7,9 +7,9 @@
             <table class="table">
               <thead>
                 <tr class="text-white bg-dark">
-                  <th colspan="2" style="text-align: center;">Date</th>
+                  <th colspan="2" style="text-align: center;">Tahun</th>
                   <th></th>
-                  <th>Value</th>
+                  <th>Operating Cash Flow</th>
                 </tr>
               </thead>
               <tbody>

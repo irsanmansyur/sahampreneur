@@ -39,7 +39,7 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Form Tambah data Bank</div>
+              <div class="card-title">Form Tambah Data Bank</div>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
               <div class="card-body">
