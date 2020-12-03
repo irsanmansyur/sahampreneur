@@ -44,7 +44,7 @@ class Video extends MY_Controller
       return     $this->template->load('public', 'video/partials/belum_diverifikasi', array_merge($data, compact([])));
     }
 
-
+    $this->kategori_model->db->order_by("no_urut");
     $kategories = $this->kategori_model->all();
     $video = $this->video_model->first();
 
