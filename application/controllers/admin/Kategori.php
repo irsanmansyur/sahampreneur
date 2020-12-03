@@ -53,7 +53,7 @@ class Kategori extends Admin_Controller
     $data = [
       'page_title' => "Edit Kategori Video",
     ];
-    $this->template->load('admin', 'kategori/edit', array_merge($data, compact(['kategories', 'kategori', "kategori"])));
+    $this->template->load('admin', 'kategori/edit', array_merge($data, compact(["kategori"])));
   }
   public function delete($id, $kategori = null)
   {
