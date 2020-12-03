@@ -90,7 +90,7 @@ class Pembayaran extends Admin_Controller
     $this->form_validation->set_rules($pembayaran->getRules());
     if ($this->form_validation->run()) {
       $pembayaran->update();
-      flashDataDB("success", "Pembayaran telah di Edit");
+      flashDataDB("success", "Pembayaran telah diedit");
       return redirect("admin/pembayaran");
     }
     $data = [

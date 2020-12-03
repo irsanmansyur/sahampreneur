@@ -139,7 +139,7 @@ class Video extends Admin_Controller
         $video->file = $file;
       }
       $video->update();
-      flashDataDB("success", "Video berhasil di edit");
+      flashDataDB("success", "Video berhasil diedit");
       return redirect("admin/video" . ($kategori ? "/kategori/{$kategori->id}" : ''));
     }
     $data = [
