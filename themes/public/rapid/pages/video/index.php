@@ -18,9 +18,13 @@
         <div class="col-md-8 my-5">
           <div class="card">
             <!--Card image-->
-            <video controlsList="nodownload" class="img-fluid video-here" controls autoplay id="videoPlay" data-current="video<?= $kategories[0]->videos()[0]->id; ?>">
-              <source src="<?= base_url("assets/video/{$kategories[0]->videos()[0]->file}"); ?>" type="video/mp4">
-            </video>
+            <?php if (isset($video->title)) : ?>
+
+              <video controlsList="nodownload" class="img-fluid video-here" controls autoplay id="videoPlay" data-current="video<?= $video->id; ?>">
+                <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
+              </video>
+            <?php endif; ?>
+
           </div>
         </div>
         <div class="col-md-4 my-5">
