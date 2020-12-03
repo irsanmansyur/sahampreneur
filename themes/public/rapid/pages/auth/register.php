@@ -81,7 +81,7 @@
         <small class="text-dark">Apakah kamu sudah punya kode referal? Jika ada isi disini</small>
         <div class="form-wrapper" style="margin-bottom: 25px;">
           <input style="margin-bottom: 5px;" name="codeReferal" value="<?= set_value('codeReferal') ?>" placeholder="Kode Referal" class="form-control">
-          <i class="zmdi zmdi-lock"></i>
+          <!-- <i class="zmdi zmdi-lock"></i> -->
           <?= form_error("codeReferal", "<div class='text-danger'>", "</div>"); ?>
         </div>
         <div class="form-check ">
