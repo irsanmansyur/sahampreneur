@@ -52,7 +52,7 @@ class Testimonial extends Admin_Controller
       if (!$foto) return back();
       $testimonial->foto = $foto;
       $testimonial->update();
-      flashDataDB("success", "Testimonial telah di Edit");
+      flashDataDB("success", "Testimonial telah diedit");
       return redirect("admin/testimonial");
     }
     $data = [

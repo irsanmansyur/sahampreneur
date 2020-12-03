@@ -57,9 +57,22 @@
               </h4>
             </div>
           </div>
+        <hr> </hr>
+          <div class="row details">
+            <div class="col">
+              <h6 class="card-title"><center>Kirim Pembayaran ke : (Pilih Salah Satu)</center></h6>
+            </div>
+          </div>
+
           <div class="table-responsive">
             <table id="basic-datatables" class="table table-hover display table table-striped table-hover">
               <tbody>
+              <tr>
+                    <td scope="col" style="vertical-align: middle;">Nama Bank</td>
+                    <td scope="col" style="vertical-align: middle;">No. Rekening | Atas Nama (A/N)</td>
+                    <td> </td>
+                  </tr>
+
                 <?php foreach ($banks as $bank) : ?>
                   <tr>
                     <td scope="col" style="vertical-align: middle;"><?= $bank->rek; ?></td>

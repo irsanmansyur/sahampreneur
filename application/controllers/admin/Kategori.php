@@ -47,7 +47,7 @@ class Kategori extends Admin_Controller
     if ($this->form_validation->run()) {
       $kategori->image = $this->upload($kategori->image);
       $kategori->update();
-      flashDataDB("success", "Kategori berhasil di Di edit");
+      flashDataDB("success", "Kategori berhasil di Edit");
       return redirect("admin/kategori");
     }
     $data = [

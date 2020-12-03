@@ -33,7 +33,7 @@
     </div>
     <div class="text-right">
       <button @click="open=true" x-show="!open" class="btn btn-secondary btn-rounded">Lihat Kategori Selengkapnya</button>
-      <button @click="open=false" x-show="open" class="btn btn-secondary btn-rounded">Lebih Sedikit</button>
+      <button @click="open=false" x-show="open" class="btn btn-secondary btn-rounded">Tampilkan Lebih Sedikit</button>
       <a href="<?= base_url("video"); ?>" class="btn btn-primary btn-rounded">Cek Video Selengkapnya</a>
     </div>
   </div>

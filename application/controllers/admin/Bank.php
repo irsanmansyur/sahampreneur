@@ -52,7 +52,7 @@ class Bank extends Admin_Controller
     if ($this->form_validation->run()) {
       $bank->image = $this->upload($bank->image);
       $bank->update();
-      flashDataDB("success", "Bank berhasil di Di edit");
+      flashDataDB("success", "Bank berhasil diedit");
       return redirect("admin/bank");
     }
     $data = [

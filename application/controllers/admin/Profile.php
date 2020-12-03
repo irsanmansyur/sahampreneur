@@ -52,7 +52,7 @@ class Profile extends Admin_Controller
       $dt['profile'] =  $this->upload($user->profile);
       $id = $user->id;
       $this->db->where('id', $id)->update("users", $dt);
-      $this->session->set_flashdata('success', "profile Berhasil di ubah.!");
+      $this->session->set_flashdata('success', "Profile Berhasil diubah!");
       return back();
     }
   }

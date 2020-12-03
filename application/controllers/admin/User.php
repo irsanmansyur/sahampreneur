@@ -265,7 +265,7 @@ class User extends Admin_Controller
         'tgl_lahir' => strtotime($this->input->post('tgl_lahir'))
       ];
       $this->user_model->update($data);
-      hasilCUD("Data Berhasil di Ubah");
+      hasilCUD("Data Berhasil diubah");
       header("Refresh:0");
     }
   }

@@ -61,7 +61,7 @@ class Why_us extends Admin_Controller
     $this->form_validation->set_rules($whyUs->getRules());
     if ($this->form_validation->run()) {
       $whyUs->update();
-      flashDataDB("success", "Homepage Statistic telah di Edit");
+      flashDataDB("success", "Homepage Statistic telah diedit");
       return redirect("admin/why_us");
     }
     $data = [
