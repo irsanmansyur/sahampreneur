@@ -22,24 +22,24 @@
 
                 <tr>
                   <td>Operating Cash Flow (Current)</td>
-                  <td><b>Rp. </b></td>
+                  <td></td>
                   <td colspan="2">
-                    <input type="number" class="form-control twoDgt" min="0" name="cash_flow" value="<?= set_value("cash_flow"); ?>">
+                    <input class="rupiah form-control " min="0" name="cash_flow" value="<?= set_value("cash_flow"); ?>">
                     <?= form_error("cash_flow", "<small class='text-danger'>", "</small>"); ?>
                   </td>
                 </tr>
                 <tr>
                   <td>Total Debt (Short Term Debt + Long Tern Debt)</td>
-                  <td style="width:20px!important"><b>Rp. </b></td>
-                  <td colspan="2"><input type="number" value="<?= set_value("total_debt"); ?>" class="form-control twoDgt" name="total_debt" min="0">
+                  <td style="width:20px!important"></td>
+                  <td colspan="2"><input value="<?= set_value("total_debt"); ?>" class="rupiah form-control " name="total_debt" min="0">
                     <?= form_error("total_debt", "<small class='text-danger'>", "</small>"); ?>
                   </td>
                 </tr>
 
                 <tr>
                   <td>Cash and Short Term Investments</td>
-                  <td style="width:20px!important"><b>Rp. </b></td>
-                  <td colspan="2"><input type="number" class="form-control twoDgt" name="cash_and_short" min="0" step="1" value="<?= set_value("cash_and_short"); ?>">
+                  <td style="width:20px!important"></td>
+                  <td colspan="2"><input class="rupiah form-control " name="cash_and_short" min="0" step="1" value="<?= set_value("cash_and_short"); ?>">
                     <?= form_error("cash_and_short", "<small class='text-danger'>", "</small>"); ?>
                   </td>
                 </tr>
@@ -105,7 +105,7 @@
                 <tr>
                   <td>Current Year</td>
                   <td colspan="2">
-                    <input type="text" class="form-control" readonly value="<?= date("Y", time()); ?>">
+                    <input type="text" class="form-control" readonly value="<?= date("Y", time()) + 1; ?>">
                   </td>
 
                 </tr>
