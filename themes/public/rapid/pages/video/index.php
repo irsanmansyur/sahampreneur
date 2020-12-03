@@ -47,8 +47,8 @@
                 <div id="collaps<?= $kategori->id; ?>" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
                   <ul class="list-group">
                     <?php foreach ($kategori->videos() as $video) : ?>
-                      <a id="video<?= $video->id; ?>" data-start="0" class="video-select list-group-item d-flex align-items-center" href="#videoPlay" data-url="<?= base_url("assets/video/{$video->file}"); ?>" @click="isplay = <?= $video->id; ?>">
-                        <svg x-show="isPlay == <?= $video->id; ?>" style="width: 35px;height:35px" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg">
+                      <a id="video<?= $video->id; ?>" data-start="0" class="video-select list-group-item d-flex align-items-center" href="#videoPlay" data-url="<?= base_url("assets/video/{$video->file}"); ?>" @click="isPlay = <?= $video->id; ?>">
+                        <svg x-show="isPlay == <?= $video->id; ?>" style="width:25px;height:30px" class="mr-3" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg">
                           <rect y="10" width="15" height="120" rx="6">
                             <animate attributeName="height" begin="0.5s" dur="2s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate>
                             <animate attributeName="y" begin="0.5s" dur="2s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate>

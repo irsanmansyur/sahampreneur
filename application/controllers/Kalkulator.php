@@ -84,9 +84,9 @@ class Kalkulator extends MY_Controller
   }
   private function _kalIntrinsicValue()
   {
-    $cashFlow = (float) str_replace("Rp. ", "", $this->input->post("cash_flow"));
-    $totalDebt = (float) str_replace("Rp. ", "", $this->input->post("total_debt"));
-    $cashAndShort = (float) str_replace("Rp. ", "", $this->input->post("cash_and_short"));
+    $cashFlow = (float)    str_replace(".", '', str_replace("Rp. ", "", $this->input->post("cash_flow")));
+    $totalDebt = (float) str_replace(".", '', str_replace("Rp. ", "", $this->input->post("total_debt")));
+    $cashAndShort = (float) str_replace(".", '', str_replace("Rp. ", "", $this->input->post("cash_and_short")));
 
 
     $sharesOutstanding = $this->input->post("shares_outstanding");
@@ -180,12 +180,10 @@ class Kalkulator extends MY_Controller
     if ($this->form_validation->run()) {
       $startYear = substr($this->input->post("start_date"), 0, 4);
 
-      $startValue = (float) str_replace("Rp. ", "", $this->input->post("start_date_value"));
+      $startValue = (float)str_replace(".", "", str_replace("Rp. ", "", $this->input->post("start_date_value")));
 
       $endYear = substr($this->input->post("end_date"), 0, 4);
-      $endValue = (float) str_replace("Rp. ", "", $this->input->post("end_date_value"));
-
-
+      $endValue = (float)str_replace(".", "", str_replace("Rp. ", "", $this->input->post("end_date_value")));
 
       $yearss =  $endYear - $startYear;
 

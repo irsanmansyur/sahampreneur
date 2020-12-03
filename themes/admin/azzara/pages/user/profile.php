@@ -43,7 +43,6 @@
               <div class="card card-with-nav">
                 <div class="card-header">
                   <h3 class="mt-4">Identitas User</h3>
-                  <?php echo validation_errors(); ?>
                 </div>
                 <div class="card-body">
                   <form action="" method="post" enctype="multipart/form-data">
@@ -53,12 +52,15 @@
                           <label>Nama</label>
                           <input type="text" class="form-control" name="name" placeholder="Nama" value="<?= $userMe->name ?? set_value('name'); ?>">
                         </div>
+                        <?= form_error("name", "<small class='text-danger'>", "</small>"); ?>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group form-group-default">
                           <label>Username</label>
                           <input type="text" readonly class="form-control" name="username" placeholder="Name" value="<?= $userMe->username ??  set_value('username'); ?>">
                         </div>
+                        <?= form_error("username", "<small class='text-danger'>", "</small>"); ?>
+
                       </div>
 
 
@@ -72,6 +74,8 @@
                             <option value="0" <?= $userMe->status == '0' ? 'selected' : ''; ?>>Non Aktif</option>
                           </select>
                         </div>
+                        <?= form_error("status", "<small class='text-danger'>", "</small>"); ?>
+
                       </div>
                       <?php if (in_role("Admin")) : ?>
                         <div class="col-md-12">
@@ -83,6 +87,7 @@
                             <?= form_error("jabatan", "<div class='text-danger pl-2'>", "</div>"); ?>
 
                           </div>
+
                         </div>
                       <?php endif; ?>
 
@@ -104,6 +109,8 @@
                         <span class="text-danger">Kosongkan jika tidak ingin diubah</span>
 
                       </div>
+                      <?= form_error("password", "<small class='text-danger'>", "</small>"); ?>
+
                     </div>
                     <div class="row mt-3">
                       <div class="col-12">
