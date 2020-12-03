@@ -92,6 +92,7 @@
         <button type="submit" id="registerNow">Daftar
           <i class="zmdi zmdi-arrow-right"></i>
         </button>
+        <!-- ok -->
         <br>
         <span style="margin-top:20px">Sudah Punya Akun ? <a href="<?= base_url("auth/login"); ?>">Login</a></span>
       </form>
