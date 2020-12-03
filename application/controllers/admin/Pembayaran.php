@@ -12,19 +12,26 @@ class Pembayaran extends Admin_Controller
   }
   public function index()
   {
-    if ($this->input->get("type") == "belum_acc")
+    if ($this->input->get("type") == "belum_acc") {
       $this->pembayaran_model->db->where('status', 0);
-    elseif ($this->input->get("type") == "diterima") {
+      $data = [
+        'page_title' => "Daftar Pending User",
+      ];
+    } elseif ($this->input->get("type") == "diterima") {
       $this->data['statusBayar'] = true;
       $this->pembayaran_model->db->where('status', 1);
+      $data = [
+        'page_title' => "Daftar Approved User",
+      ];
     } else {
       $this->data['statusBayar'] = false;
       $this->pembayaran_model->db->where('status', 2);
+      $data = [
+        'page_title' => "Daftar Rejected  ",
+      ];
     }
     $pembayarans = $this->pembayaran_model->all();
-    $data = [
-      'page_title' => "Daftar Pembayaran User",
-    ];
+
     $this->template->load('admin', 'pembayaran/index', array_merge($data, compact(['pembayarans'])));
   }
   public function detail($id)
