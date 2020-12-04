@@ -66,7 +66,7 @@ class Testimonial extends Admin_Controller
 
     if (!$testimonial) return $this->not_permition();
     $testimonial->delete();
-    echo json_encode(flashDataDB('success', "Testimonial dari " . $testimonial->user()->name . " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', "Testimonial dari " . $testimonial->user()->name . " Berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {

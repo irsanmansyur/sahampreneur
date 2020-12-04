@@ -39,9 +39,9 @@
                 <div class="card-header" role="tab" id="headingOne1">
                   <a data-toggle="collapse" data-parent="#accordionEx" href="#collaps<?= $kategori->id; ?>" aria-expanded="true" aria-controls="collaps<?= $kategori->id; ?>">
                     <span class="d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">
+                      <h6 class="mb-0" style="color:black;">
                         <?= $kategori->name; ?>
-                      </h5>
+                      </h6>
                       <span class="badge badge-primary badge-pill"><?= $kategori->countVideo(); ?></span>
                     </span>
                   </a>

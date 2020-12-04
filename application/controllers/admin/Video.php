@@ -152,7 +152,7 @@ class Video extends Admin_Controller
     $video = $this->video_model->first($id);
     if (!$video || $this->input->method() !== "post") return $this->not_permition();
     $video->delete();
-    echo json_encode(flashDataDB('success', $video->title . " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', $video->title . " Berhasil dihapus!"));
   }
   private function upload($filename = 'default.mp4')
   {

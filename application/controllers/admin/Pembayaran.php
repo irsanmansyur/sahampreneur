@@ -104,6 +104,6 @@ class Pembayaran extends Admin_Controller
 
     if (!$pembayaran) return $this->not_permition();
     $pembayaran->delete();
-    echo json_encode(flashDataDB('success', "Pembayaran dari " . $pembayaran->user()->name . " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', "Pembayaran dari " . $pembayaran->user()->name . " Berhasil dihapus!"));
   }
 }

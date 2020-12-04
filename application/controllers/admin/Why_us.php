@@ -74,6 +74,6 @@ class Why_us extends Admin_Controller
     $why_us = $this->why_us_model->first($id);
     if (!$why_us) return $this->not_permition();
     $why_us->delete();
-    echo json_encode(flashDataDB('success', "Homepage Statistic berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', "Homepage Statistic Berhasil dihapus!"));
   }
 }
