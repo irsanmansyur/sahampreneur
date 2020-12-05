@@ -19,8 +19,7 @@
           <div class="card">
             <!--Card image-->
             <?php if (isset($video->title)) : ?>
-
-              <video controlsList="nodownload" class="img-fluid video-here" controls autoplay id="videoPlay" data-current="video<?= $video->id; ?>">
+              <video controlsList="nodownload" x-init="isPlay = <?= $video->id; ?>" class="img-fluid video-here" controls autoplay id="videoPlay" data-current="video<?= $video->id; ?>">
                 <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
               </video>
             <?php endif; ?>
@@ -105,7 +104,16 @@
 
   <?php $this->load->view($thema_load . "components/js_library.php"); ?>
   <script src="<?= $thema_folder . "pages/video/partials/main.js"; ?>"></script>
+  <script>
+    let myVideo = document.querySelector("#videoPlay");
+    myVideo.addEventListener("click", function() {
+      let idV = parseInt(myVideo.dataset.current.replace("video", ""));
+      if (myVideo.paused) {
+        isPlay = idV;
+      }
 
+    })
+  </script>
 </body>
 
 </html>
