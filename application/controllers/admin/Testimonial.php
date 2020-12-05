@@ -72,7 +72,7 @@ class Testimonial extends Admin_Controller
   {
     if ($_FILES['foto']['name']) {
       $config['allowed_types'] = 'gif|jpg|jpeg|png';
-      $config['max_size']      = '2048';
+      $config['max_size']      = '12048';
       $config['upload_path'] = './assets/img/testimonial/';
       $this->load->library('upload', $config);
       if ($this->upload->do_upload('foto')) {

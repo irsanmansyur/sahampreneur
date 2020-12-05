@@ -99,7 +99,8 @@ class Kalkulator extends MY_Controller
     $years = [];
     $year10 = 0;
     $cashFlowThLima = 0;
-    for ($i = 0; $i < 10; $i++) {
+
+    for ($i = 1; $i <= 10; $i++) {
       $discountFactor =  1 / (1 * pow(1 + $discountRate, $i + 1));
       if ($i < 5) {
         $cashFlowth =  $cashFlowThLima = $cashFlow *  pow(1 + $percentTP, $i + 1);

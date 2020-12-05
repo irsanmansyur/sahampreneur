@@ -25,7 +25,7 @@
           <?php if (is_login()) : ?>
             <li> <a href="<?= base_url("profile"); ?>"> <?= split_name(user()->name)[0]; ?></a></li>
             <li>
-              <form action="auth/logout" method="post" class="form-logout"><button type="submit" class="btn btn-danger p-2 logout-res">Logout</button></form>
+              <form action="<?= base_url('auth/logout '); ?>" method="post" class="form-logout"><button type="submit" class="btn btn-danger p-2 logout-res">Logout</button></form>
             </li>
           <?php else : ?>
             <li><a href="auth/login">Login</a></li>
