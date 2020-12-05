@@ -25,7 +25,7 @@ class Masukan extends Admin_Controller
     $masukan = $this->masukan_model->first($id);
     if (!$masukan || $this->input->method() !== "post") return $this->not_permition();
     $masukan->delete();
-    echo json_encode(flashDataDB('success', " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', " Berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {

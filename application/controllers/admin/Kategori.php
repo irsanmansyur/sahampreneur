@@ -60,7 +60,7 @@ class Kategori extends Admin_Controller
     $kategori = $this->kategori_model->first($id);
     if (!$kategori || $this->input->method() !== "post") return $this->not_permition();
     $kategori->delete();
-    echo json_encode(flashDataDB('success', $kategori->name . " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', $kategori->name . " Berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {

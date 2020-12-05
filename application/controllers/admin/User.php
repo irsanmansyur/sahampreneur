@@ -183,7 +183,7 @@ class User extends Admin_Controller
       echo  json_encode(["status" => false, 'message' => "Gagal!"]);
     } else {
       $delete =  $user->delete();
-      echo json_encode(flashDataDB('success', $user->name . " berhasil dihapus!"));
+      echo json_encode(flashDataDB('success', $user->name . " Berhasil dihapus!"));
     }
   }
   private function upload($filename = 'default.jpg')

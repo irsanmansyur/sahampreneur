@@ -25,7 +25,7 @@
               </p>
             </div>
             <!-- <h3>Odio sed id eos et laboriosam consequatur eos earum soluta.</h3> -->
-
+          <br/>
             <div class="text-center">
              <!-- <h3 class="font-weight-bold"></h3> -->
               <span class="d-block w-75 m-auto pb-3 border-bottom border-dark">Founder of Sahampreneur & Uniso</span>
