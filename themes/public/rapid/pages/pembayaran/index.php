@@ -11,7 +11,7 @@
   <main id="main" style="margin-top:110px">
     <div class="container">
       <!--Author      : @arboshiki-->
-      <div class="card">
+      <div class="card mb-4">
         <div class="card-header">
           <header>
             <div class="row">
@@ -23,7 +23,7 @@
               <div class="col company-details">
                 <h2 class="name">
                   <a target="_blank" href="<?= base_url(); ?>">
-                   <b> <?= $settings->name_app; ?> </b>
+                    <b> <?= $settings->name_app; ?> </b>
                   </a>
                 </h2>
                 <div><?= $settings->Alamat; ?></div>
@@ -33,9 +33,9 @@
             </div>
           </header>
         </div>
-        <div class="card-body">
+        <div class="card-body bg-light">
           <div class="row contacts">
-            <div class="col invoice-to">
+            <div class="col invoice-to ">
               <div class="text-gray-light"><b>INVOICE TO</b></div>
               <h2 class="to"><?= user()->name; ?></h2>
               <!-- <div class="address"><?= ''; ?></div> -->
@@ -57,22 +57,24 @@
               </h4>
             </div>
           </div>
-        <hr> </hr>
+          <hr>
+          </hr>
           <div class="row details">
             <div class="col">
-              <h6 class="card-title"><center>Kirim Pembayaran ke : (Pilih Salah Satu)</center></h6>
+              <h6 class="card-title">
+                <center>Kirim Pembayaran ke : (Pilih Salah Satu)</center>
+              </h6>
             </div>
           </div>
 
           <div class="table-responsive">
             <table id="basic-datatables" class="table table-hover display table table-striped table-hover">
               <tbody>
-              <tr>
-                    <td scope="col" style="vertical-align: middle;">Nama Bank</td>
-                    <td scope="col" style="vertical-align: middle;">No. Rekening | Atas Nama (A/N)</td>
-                    <td> </td>
-                  </tr>
-
+                <tr>
+                  <td scope="col" style="vertical-align: middle;">Nama Bank</td>
+                  <td scope="col" style="vertical-align: middle;">No. Rekening | Atas Nama (A/N)</td>
+                  <td> </td>
+                </tr>
                 <?php foreach ($banks as $bank) : ?>
                   <tr>
                     <td scope="col" style="vertical-align: middle;"><?= $bank->rek; ?></td>
@@ -91,13 +93,18 @@
 
                 <p class="py-1">Dengan Alasan : <b><?= $pembayaran->alasan; ?></b></p>
                 <p class="text-danger">Mohon Ganti Bukti Pembayaran</p>
+              <?php elseif ($pembayaran->status === "1") :; ?>
+                <p class="py-4"><button class="btn btn-success">Telah Diverifikasi</button></p>
               <?php else :; ?>
                 <p class="py-4"><button class="btn btn-warning">Sedang Diverifikasi</button></p>
               <?php endif; ?>
             </center>
-            <hr>
           <?php endif; ?>
-          <?php $this->load->view($thema_load . "components/dropzone/bootstrap.php"); ?>
+          <?php if ($pembayaran->status !== "1") : ?>
+            <hr>
+
+            <?php $this->load->view($thema_load . "components/dropzone/bootstrap.php"); ?>
+          <?php endif; ?>
         </div>
       </div>
     </div>
