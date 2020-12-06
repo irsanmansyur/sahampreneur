@@ -36,9 +36,9 @@ class Kalkulator extends MY_Controller
       return redirect("/pembayaran");
     } else if ($pembayaran->status != 1) {
       if ($pembayaran->status == 0) {
-        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Kami akan segera menghubungi anda jika pembayaran anda telah diverifikasi. Terima Kasih.";
+        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Silahkan Cek Status Pembayaran secara berkala. Terima Kasih.";
       } else   if ($pembayaran->status == 2) {
-        $data['status'] = "Pembayaran Anda di Tolak ..!, Dengan Alasan : \" $pembayaran->alasan \"";
+        $data['status'] = "Bukti Pembayaran Anda di Tolak ! Alasan Penolakan : \" $pembayaran->alasan \"";
       }
       $this->session->set_flashdata("warning", $data['status']);
       return  $this->template->load('public', 'kalkulator/partials/belum_diverifikasi', array_merge($data, compact([])), false);
@@ -138,9 +138,9 @@ class Kalkulator extends MY_Controller
       return redirect("/pembayaran");
     } else if ($pembayaran->status != 1) {
       if ($pembayaran->status == 0) {
-        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Kami akan segera menghubungi anda jika pembayaran anda telah diverifikasi. Terima Kasih.";
+        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Silahkan Cek Status Pembayaran secara berkala. Terima Kasih.";
       } else   if ($pembayaran->status == 2) {
-        $data['status'] = "Pembayaran Anda di Tolak ..!, Dengan Alasan : \" $pembayaran->alasan \"";
+        $data['status'] = "Bukti Pembayaran Anda di Tolak ! Alasan Penolakan : \" $pembayaran->alasan \"";
       }
       $this->session->set_flashdata("warning", $data['status']);
       return  $this->template->load('public', 'kalkulator/partials/belum_diverifikasi', array_merge($data, compact([])), false);
