@@ -152,11 +152,12 @@ class User extends Admin_Controller
       $name =  $this->input->post('name');
       $jabatan =  $this->input->post('jabatan');
       $username =  $this->input->post('username');
-      $status = $this->input->post('status') == "0" ? "00" : $this->input->post('status');
-      $data = compact(["email", 'username', 'password', 'name', 'status']);
+      $status = (int) $this->input->post('status');
+      $data = compact(["email", 'username', 'name', 'status']);
       $data['profile'] = $this->upload($user->profile);
       if ($this->input->post("password"))
         $data['password'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+
       $user->update($data);
 
 

@@ -106,16 +106,18 @@ class CI_Model
       $fields = $this->_allowed;
 
     $data = array_merge((array)$this, $data);
+
     $newData = [];
     if ($fields) {
       foreach ($data as $key => $val) {
         if (in_array($key, $fields)) {
           $this->{$key} = $val;
-          if ($val)
+          if (!is_null($val))
             $newData[$key] =  $val;
         }
       }
     }
+
     return $newData;
   }
 
@@ -245,12 +247,14 @@ class CI_Model
   }
   public function update($post = null, $where = null)
   {
+
     $post = $post ?? $this->input->post();
     if (isset($this->{$this->_primaryKey})) {
       $this->where($this->_primaryKey, $this->{$this->_primaryKey});
     }
 
     $newPost = $this->_data($post);
+
     if ($where)
       $this->where(($where));
     $update = $this;

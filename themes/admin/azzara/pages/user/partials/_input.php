@@ -31,9 +31,9 @@
     <div class="form-group form-group-default">
       <label>Status</label>
       <select class="form-control" id="status" name="status">
-        <option disable>Pilih Status</option>
-        <option value="1" <?= set_value("status") == 1  ? "selected" : ''; ?>>Aktif</option>
-        <option value="0" <?= set_value("status") == 0 ? "selected" : ''; ?>>Non Aktif</option>
+        <option disabled selected>Pilih Status</option>
+        <option value="1" <?= set_value("status") === "1"  ? "selected" : ($user_edit->status == 1 ? ' selected' : ''); ?>>Aktif</option>
+        <option value="0" <?= set_value("status") === "0" ? "selected" : ($user_edit->status == 0 ? ' selected' : ''); ?>>Non Aktif</option>
       </select>
     </div>
     <?= form_error("status", "<div class='text-danger pl-2'>", "</div>"); ?>
