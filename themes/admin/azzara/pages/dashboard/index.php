@@ -83,7 +83,7 @@
                     <div class="card-body">
                       <div class="row align-items-center">
                         <div class="col-icon">
-                          <div class="icon-big text-center icon-primary bubble-shadow-small">
+                          <div class="icon-big text-center icon-warning bubble-shadow-small">
                             <i class="fas fa-users"></i>
                           </div>
                         </div>
@@ -102,7 +102,7 @@
                     <div class="card-body">
                       <div class="row align-items-center">
                         <div class="col-icon">
-                          <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                          <div class="icon-big text-center icon-success bubble-shadow-small">
                             <i class="fas fa-users"></i>
                           </div>
                         </div>
@@ -121,7 +121,7 @@
                     <div class="card-body">
                       <div class="row align-items-center">
                         <div class="col-icon">
-                          <div class="icon-big text-center icon-success bubble-shadow-small">
+                          <div class="icon-big text-center icon-danger bubble-shadow-small">
                             <i class="fas fa-users"></i>
                           </div>
                         </div>
