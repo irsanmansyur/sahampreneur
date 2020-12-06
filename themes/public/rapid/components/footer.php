@@ -35,9 +35,9 @@
               </div>
 
               <div class="social-links">
-                <a href="<?= @$settings->facebook_link; ?>" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="<?= @$settings->instagram_link; ?>" class="instagram"><i class="fa fa-instagram"></i></a>
-                <a href="<?= @$settings->telegram_link; ?>" class="telegram"><i class="fa fa-telegram"></i></a>
+                <a href="<?= @$settings->facebook_link; ?>" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="<?= @$settings->instagram_link; ?>" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="<?= @$settings->telegram_link; ?>" class="telegram" target="_blank"><i class="fa fa-telegram"></i></a>
               </div>
 
             </div>
