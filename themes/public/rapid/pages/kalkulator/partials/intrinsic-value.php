@@ -136,7 +136,7 @@
               <thead>
                 <tr class="text-white bg-dark">
                   <th>Year</th>
-                  <?php for ($i = 0; $i < 10; $i++) :; ?>
+                  <?php for ($i = 1; $i <= 10; $i++) :; ?>
                     <th><?= date("Y", time()) + $i; ?></th>
                   <?php endfor; ?>
                 </tr>
@@ -144,13 +144,13 @@
               <tbody>
                 <tr>
                   <td>Cash Flow (Projected)</td>
-                  <?php for ($i = 0; $i < 10; $i++) :; ?>
+                  <?php for ($i = 1; $i <= 10; $i++) :; ?>
                     <td><?= rupiah($years[date("Y", time()) + $i]['cashflow']); ?></td>
                   <?php endfor; ?>
                 </tr>
                 <tr>
                   <td>Discount Factor</td>
-                  <?php for ($i = 0; $i < 10; $i++) :; ?>
+                  <?php for ($i = 1; $i <= 10; $i++) :; ?>
                     <td><?= $years[date("Y", time()) + $i]['discountFactor']; ?></td>
                   <?php endfor; ?>
                 </tr>
@@ -158,7 +158,7 @@
               <tfoot>
                 <tr class="text-white bg-dark" style="font-size: 13px;">
                   <th>Discounted Value</th>
-                  <?php for ($i = 0; $i < 10; $i++) :; ?>
+                  <?php for ($i = 1; $i <= 10; $i++) :; ?>
                     <th><?= rupiah($years[date("Y", time()) + $i]['discountedValue']); ?></th>
                   <?php endfor; ?>
                 </tr>
