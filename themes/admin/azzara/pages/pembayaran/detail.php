@@ -117,12 +117,12 @@
                 </div>
                 <div class="col-md-5">
                   <div class="card">
-                    <h3 class="text-center mt-3">Detail User Pembayar</h3>
-                    <center>
+                    <h3 class="text-center mt-3">Detail Pembayaran User</h3>
+                   <!-- <center>
                       <div class="avatar avatar-xl">
                         <img src="<?= $pembayaran->user()->takeProfile(); ?>" alt="..." class="avatar-img rounded-circle">
                       </div>
-                    </center>
+                    </center> --> 
                     <div class="row p-3">
                       <div class="col-6">Nama</div>
                       <div class="col-6">: <?= $pembayaran->user()->name; ?></div>
@@ -132,7 +132,7 @@
                       <div class="col-6">: <?= $pembayaran->user()->username; ?></div>
                       <div class="col-6">Tanggal Registrasi</div>
                       <div class="col-6">: <?= date("d-m-Y", strtotime($pembayaran->user()->created_at)); ?></div>
-                      <?php if ($pembayaran->status === 1) : ?>
+                      <?php if ($pembayaran->status !== 0) : ?>
                         <div class="col-6">Tanggal Verifikasi</div>
                         <div class="col-6">: <?= date("d-m-Y", strtotime($pembayaran->user()->created_at)); ?></div>
                       <?php endif; ?>

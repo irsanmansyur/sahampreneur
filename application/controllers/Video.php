@@ -22,7 +22,7 @@ class Video extends MY_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(["testimonial_model", "kategori_model", "user_model", "Pembayaran_model"]);
+    $this->load->model(["testimonial_model", "kategori_model", "video_model", "user_model", "Pembayaran_model"]);
   }
   public function index()
   {
@@ -36,16 +36,18 @@ class Video extends MY_Controller
       return redirect("/pembayaran");
     } else if ($pembayaran->status != 1) {
       if ($pembayaran->status == 0) {
-        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Kami akan segera menghubungi anda jika pembayaran anda telah diverifikasi. Terima Kasih.";
+        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Silahkan Cek Status Pembayaran secara berkala. Terima Kasih.";
       } else   if ($pembayaran->status == 2) {
-        $data['status'] = "Pembayaran Anda di Tolak ..!, Dengan Alasan : \" $pembayaran->alasan \"";
+        $data['status'] = "Bukti Pembayaran Anda di Tolak ! Alasan Penolakan : \" $pembayaran->alasan \"";
       }
       $this->session->set_flashdata("warning", $data['status']);
       return     $this->template->load('public', 'video/partials/belum_diverifikasi', array_merge($data, compact([])));
     }
 
-
+    $this->kategori_model->db->order_by("no_urut");
     $kategories = $this->kategori_model->all();
+    $video = $this->video_model->first();
+
     $admins = $this->user_model->isAdmin(8);
 
     $testimonials = $this->testimonial_model->all(10);
@@ -53,6 +55,6 @@ class Video extends MY_Controller
       "page_title" => "Selamat Datang",
     ];
 
-    $this->template->load('public', 'video/index', array_merge($data, compact(['testimonials', "admins", "kategories"])));
+    $this->template->load('public', 'video/index', array_merge($data, compact(["video", 'testimonials', "admins", "kategories"])));
   }
 }

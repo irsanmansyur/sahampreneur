@@ -52,7 +52,7 @@ class Testimonial extends Admin_Controller
       if (!$foto) return back();
       $testimonial->foto = $foto;
       $testimonial->update();
-      flashDataDB("success", "Testimonial telah di Edit");
+      flashDataDB("success", "Testimonial telah diedit");
       return redirect("admin/testimonial");
     }
     $data = [
@@ -66,13 +66,13 @@ class Testimonial extends Admin_Controller
 
     if (!$testimonial) return $this->not_permition();
     $testimonial->delete();
-    echo json_encode(flashDataDB('success', "Testimonial dari " . $testimonial->user()->name . " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', "Testimonial dari " . $testimonial->user()->name . " Berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {
     if ($_FILES['foto']['name']) {
       $config['allowed_types'] = 'gif|jpg|jpeg|png';
-      $config['max_size']      = '2048';
+      $config['max_size']      = '12048';
       $config['upload_path'] = './assets/img/testimonial/';
       $this->load->library('upload', $config);
       if ($this->upload->do_upload('foto')) {

@@ -36,9 +36,9 @@ class Kalkulator extends MY_Controller
       return redirect("/pembayaran");
     } else if ($pembayaran->status != 1) {
       if ($pembayaran->status == 0) {
-        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Kami akan segera menghubungi anda jika pembayaran anda telah diverifikasi. Terima Kasih.";
+        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Silahkan Cek Status Pembayaran secara berkala. Terima Kasih.";
       } else   if ($pembayaran->status == 2) {
-        $data['status'] = "Pembayaran Anda di Tolak ..!, Dengan Alasan : \" $pembayaran->alasan \"";
+        $data['status'] = "Bukti Pembayaran Anda di Tolak ! Alasan Penolakan : \" $pembayaran->alasan \"";
       }
       $this->session->set_flashdata("warning", $data['status']);
       return  $this->template->load('public', 'kalkulator/partials/belum_diverifikasi', array_merge($data, compact([])), false);
@@ -48,15 +48,15 @@ class Kalkulator extends MY_Controller
       'active' => "intrinsic_value",
     ];
     $this->load->library("form_validation");
-    $this->form_validation->set_rules("cash_flow", "Operoting Cash Flow (Current)", "numeric|required", [
+    $this->form_validation->set_rules("cash_flow", "Operoting Cash Flow (Current)", "required", [
       'required'      => 'Anda harus mengisi %s.',
       "numeric" => "Mohon input hanya angka"
     ]);
-    $this->form_validation->set_rules("total_debt", "Total Debt ", "numeric|required", [
+    $this->form_validation->set_rules("total_debt", "Total Debt ", "required", [
       'required'      => 'Anda harus mengisi %s.',
       "numeric" => "Mohon input hanya angka"
     ]);
-    $this->form_validation->set_rules("cash_and_short", "Cash and Short Term Investments ", "numeric|required", [
+    $this->form_validation->set_rules("cash_and_short", "Cash and Short Term Investments ", "required", [
       'required'      => 'Anda harus mengisi %s.',
       "numeric" => "Mohon input hanya angka"
     ]);
@@ -84,9 +84,11 @@ class Kalkulator extends MY_Controller
   }
   private function _kalIntrinsicValue()
   {
-    $cashFlow = $this->input->post("cash_flow");
-    $totalDebt = $this->input->post("total_debt");
-    $cashAndShort = $this->input->post("cash_and_short");
+    $cashFlow = (float)    str_replace(".", '', str_replace("Rp. ", "", $this->input->post("cash_flow")));
+    $totalDebt = (float) str_replace(".", '', str_replace("Rp. ", "", $this->input->post("total_debt")));
+    $cashAndShort = (float) str_replace(".", '', str_replace("Rp. ", "", $this->input->post("cash_and_short")));
+
+
     $sharesOutstanding = $this->input->post("shares_outstanding");
     $percentTP = ($this->input->post("percent_tp")) / 100;
     $percentTE = ($this->input->post("percent_te")) / 100;
@@ -97,7 +99,8 @@ class Kalkulator extends MY_Controller
     $years = [];
     $year10 = 0;
     $cashFlowThLima = 0;
-    for ($i = 0; $i < 10; $i++) {
+
+    for ($i = 1; $i <= 10; $i++) {
       $discountFactor =  1 / (1 * pow(1 + $discountRate, $i + 1));
       if ($i < 5) {
         $cashFlowth =  $cashFlowThLima = $cashFlow *  pow(1 + $percentTP, $i + 1);
@@ -135,35 +138,37 @@ class Kalkulator extends MY_Controller
       return redirect("/pembayaran");
     } else if ($pembayaran->status != 1) {
       if ($pembayaran->status == 0) {
-        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Kami akan segera menghubungi anda jika pembayaran anda telah diverifikasi. Terima Kasih.";
+        $data['status'] = "Mohon bersabar, pembayaran anda sedang divalidasi oleh Admin Sahampreneur. Silahkan Cek Status Pembayaran secara berkala. Terima Kasih.";
       } else   if ($pembayaran->status == 2) {
-        $data['status'] = "Pembayaran Anda di Tolak ..!, Dengan Alasan : \" $pembayaran->alasan \"";
+        $data['status'] = "Bukti Pembayaran Anda di Tolak ! Alasan Penolakan : \" $pembayaran->alasan \"";
       }
       $this->session->set_flashdata("warning", $data['status']);
       return  $this->template->load('public', 'kalkulator/partials/belum_diverifikasi', array_merge($data, compact([])), false);
     }
+
     $this->load->library("form_validation");
-    $this->form_validation->set_rules("start_date_value", "Start Date Value", "numeric|required", [
+
+    $this->form_validation->set_rules("start_date_value", "Start Date Value", "required", [
       'required'      => 'Anda harus mengisi %s.',
-      "numeric" => "Mohon input hanya angka"
+      // "numeric" => "Mohon input hanya angka"
     ]);
 
-    $this->form_validation->set_rules("end_date_value", "Start Date Value ", "numeric|required", [
+    $this->form_validation->set_rules("end_date_value", "Start Date Value ", "required", [
       'required'      => 'Anda harus mengisi %s.',
-      "numeric" => "Mohon input hanya angka"
+      // "numeric" => "Mohon input hanya angka"
     ]);
 
 
-    // $this->form_validation->set_rules("start_date", "Start Date  ", "required|regex_match[(0[1-9]|1[0-9]|2[0-9]|3(0-9))-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])]", [
-    //   'required'      => 'Anda harus mengisi %s.',
-    //   "numeric" => "Mohon input hanya angka",
-    //   "regex_match" => "%s Harus berformat tanggal yang benar",
-    // ]);
-    // $this->form_validation->set_rules("end_date", "End Date  ", "required|regex_match[(0[1-9]|1[0-9]|2[0-9]|3(0-9))-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])]", [
-    //   'required'      => 'Anda harus mengisi %s.',
-    //   "numeric" => "Mohon input hanya angka",
-    //   "regex_match" => "%s Harus berformat tanggal yang benar",
-    // ]);
+    $this->form_validation->set_rules("start_date", "Start Date  ", "required", [
+      'required'      => 'Anda harus mengisi %s.',
+      // "numeric" => "Mohon input hanya angka",
+      // "regex_match" => "%s Harus berformat Tahun yang benar",
+    ]);
+    $this->form_validation->set_rules("end_date", "End Date  ", "required", [
+      'required'      => 'Anda harus mengisi %s.',
+      //   //   "numeric" => "Mohon input hanya angka",
+      //   "regex_match" => "%s Harus berformat Tahun yang benar",
+    ]);
 
 
 
@@ -176,10 +181,10 @@ class Kalkulator extends MY_Controller
     if ($this->form_validation->run()) {
       $startYear = substr($this->input->post("start_date"), 0, 4);
 
-      $startValue =  $this->input->post("start_date_value");
+      $startValue = (float)str_replace(".", "", str_replace("Rp. ", "", $this->input->post("start_date_value")));
 
       $endYear = substr($this->input->post("end_date"), 0, 4);
-      $endValue = $this->input->post("end_date_value");
+      $endValue = (float)str_replace(".", "", str_replace("Rp. ", "", $this->input->post("end_date_value")));
 
       $yearss =  $endYear - $startYear;
 

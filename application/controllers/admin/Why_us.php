@@ -61,7 +61,7 @@ class Why_us extends Admin_Controller
     $this->form_validation->set_rules($whyUs->getRules());
     if ($this->form_validation->run()) {
       $whyUs->update();
-      flashDataDB("success", "Homepage Statistic telah di Edit");
+      flashDataDB("success", "Homepage Statistic telah diedit");
       return redirect("admin/why_us");
     }
     $data = [
@@ -74,6 +74,6 @@ class Why_us extends Admin_Controller
     $why_us = $this->why_us_model->first($id);
     if (!$why_us) return $this->not_permition();
     $why_us->delete();
-    echo json_encode(flashDataDB('success', "Homepage Statistic berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', "Homepage Statistic Berhasil dihapus!"));
   }
 }

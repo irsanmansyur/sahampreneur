@@ -50,7 +50,7 @@
 
 
     <!--==========================
-      Call To Action Section
+      Call To Action Sectionns
     ============================-->
     <section id="call-to-action" class="wow fadeInUp">
       <div class="container">

@@ -47,20 +47,20 @@ class Kategori extends Admin_Controller
     if ($this->form_validation->run()) {
       $kategori->image = $this->upload($kategori->image);
       $kategori->update();
-      flashDataDB("success", "Kategori berhasil di Di edit");
+      flashDataDB("success", "Kategori berhasil di Edit");
       return redirect("admin/kategori");
     }
     $data = [
       'page_title' => "Edit Kategori Video",
     ];
-    $this->template->load('admin', 'kategori/edit', array_merge($data, compact(['kategories', 'kategori', "kategori"])));
+    $this->template->load('admin', 'kategori/edit', array_merge($data, compact(["kategori"])));
   }
   public function delete($id, $kategori = null)
   {
     $kategori = $this->kategori_model->first($id);
     if (!$kategori || $this->input->method() !== "post") return $this->not_permition();
     $kategori->delete();
-    echo json_encode(flashDataDB('success', $kategori->name . " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', $kategori->name . " Berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {

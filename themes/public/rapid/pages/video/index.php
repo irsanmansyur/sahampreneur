@@ -14,13 +14,16 @@
 
   <main id="main" class='mt-5 mn-vh-100'>
     <div class="container">
-      <div class="row">
+      <div class="row" x-data="{ isPlay: 10 }">
         <div class="col-md-8 my-5">
           <div class="card">
             <!--Card image-->
-            <video controlsList="nodownload" class="img-fluid video-here" controls autoplay id="videoPlay" data-current="video<?= $kategories[0]->videos()[0]->id; ?>">
-              <source src="<?= base_url("assets/video/{$kategories[0]->videos()[0]->file}"); ?>" type="video/mp4">
-            </video>
+            <?php if (isset($video->title)) : ?>
+              <video controlsList="nodownload" x-init="isPlay = <?= $video->id; ?>" class="img-fluid video-here" controls autoplay id="videoPlay" data-current="video<?= $video->id; ?>">
+                <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
+              </video>
+            <?php endif; ?>
+
           </div>
         </div>
         <div class="col-md-4 my-5">
@@ -35,9 +38,9 @@
                 <div class="card-header" role="tab" id="headingOne1">
                   <a data-toggle="collapse" data-parent="#accordionEx" href="#collaps<?= $kategori->id; ?>" aria-expanded="true" aria-controls="collaps<?= $kategori->id; ?>">
                     <span class="d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">
+                      <h6 class="mb-0" style="color:black;">
                         <?= $kategori->name; ?>
-                      </h5>
+                      </h6>
                       <span class="badge badge-primary badge-pill"><?= $kategori->countVideo(); ?></span>
                     </span>
                   </a>
@@ -47,10 +50,33 @@
                 <div id="collaps<?= $kategori->id; ?>" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
                   <ul class="list-group">
                     <?php foreach ($kategori->videos() as $video) : ?>
-                      <a id="video<?= $video->id; ?>" data-start="0" class="video-select list-group-item d-flex align-items-center" href="#videoPlay" data-url="<?= base_url("assets/video/{$video->file}"); ?>">
-                        <span style="width: 45px;height:45px;border-radius:50%;background:black;text-align:center;padding-left:5px;margin-right:10px" class="d-flex align-items-center justify-content-center">
+                      <a id="video<?= $video->id; ?>" data-start="0" class="video-select list-group-item d-flex align-items-center" href="#videoPlay" data-url="<?= base_url("assets/video/{$video->file}"); ?>" @click="isPlay = <?= $video->id; ?>">
+                        <svg x-show="isPlay == <?= $video->id; ?>" style="width:25px;height:30px" class="mr-3" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="10" width="15" height="120" rx="6">
+                            <animate attributeName="height" begin="0.5s" dur="2s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" begin="0.5s" dur="2s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate>
+                          </rect>
+                          <rect x="30" y="10" width="15" height="120" rx="6">
+                            <animate attributeName="height" begin="0.25s" dur="2s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" begin="0.25s" dur="2s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate>
+                          </rect>
+                          <rect x="60" width="15" height="140" rx="6">
+                            <animate attributeName="height" begin="0s" dur="2s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" begin="0s" dur="2s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate>
+                          </rect>
+                          <rect x="90" y="10" width="15" height="120" rx="6">
+                            <animate attributeName="height" begin="0.25s" dur="2s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" begin="0.25s" dur="2s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate>
+                          </rect>
+                          <rect x="120" y="10" width="15" height="120" rx="6">
+                            <animate attributeName="height" begin="0.5s" dur="2s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" begin="0.5s" dur="2s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"></animate>
+                          </rect>
+                        </svg>
+                        <img x-show="isPlay != <?= $video->id; ?>" src="<?= base_url("assets/img/icon/play.png"); ?>" alt="play" class="rounded rounded-cirle mr-2" style="width: 30px;height:30px;">
+                        <!-- <span style="width: 45px;height:45px;border-radius:50%;background:black;text-align:center;padding-left:5px;margin-right:10px" class="d-flex align-items-center justify-content-center">
                           <i class="fa fa-play" style="font-size:30px;color:blue ;margin-left:10px"></i>
-                        </span>
+                        </span> -->
                         <?= $video->title; ?>
                       </a>
                     <?php endforeach; ?>
@@ -78,7 +104,16 @@
 
   <?php $this->load->view($thema_load . "components/js_library.php"); ?>
   <script src="<?= $thema_folder . "pages/video/partials/main.js"; ?>"></script>
+  <script>
+    let myVideo = document.querySelector("#videoPlay");
+    myVideo.addEventListener("click", function() {
+      let idV = parseInt(myVideo.dataset.current.replace("video", ""));
+      if (myVideo.paused) {
+        isPlay = idV;
+      }
 
+    })
+  </script>
 </body>
 
 </html>

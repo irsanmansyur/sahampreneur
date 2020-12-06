@@ -35,9 +35,9 @@
               </div>
 
               <div class="social-links">
-                <a href="<?= @$settings->facebook_link; ?>" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="<?= @$settings->instagram_link; ?>" class="instagram"><i class="fa fa-instagram"></i></a>
-                <a href="<?= @$settings->telegram_link; ?>" class="telegram"><i class="fa fa-telegram"></i></a>
+                <a href="<?= @$settings->facebook_link; ?>" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="<?= @$settings->instagram_link; ?>" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="<?= @$settings->telegram_link; ?>" class="telegram" target="_blank"><i class="fa fa-telegram"></i></a>
               </div>
 
             </div>
@@ -97,6 +97,7 @@
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Rapid
         -->
       <!-- Designed by <a>Sahampreneur</a> -->
+      <a href="https://instagram.com/acien.id?igshid=1jj4590k4edzv">Acien Global Indonesia ©️ 2020 Custom WEB Developer</a>
     </div>
   </div>
 </footer><!-- #footer -->

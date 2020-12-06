@@ -43,6 +43,7 @@ class Bank extends Admin_Controller
   }
   public function edit($id, $bank = null)
   {
+    // "edit data ";
     $bank = $this->bank_model->first($id);
     if (!$bank) return $this->not_permition();
 
@@ -51,20 +52,20 @@ class Bank extends Admin_Controller
     if ($this->form_validation->run()) {
       $bank->image = $this->upload($bank->image);
       $bank->update();
-      flashDataDB("success", "Bank berhasil di Di edit");
+      flashDataDB("success", "Bank berhasil diedit");
       return redirect("admin/bank");
     }
     $data = [
       'page_title' => "Edit Bank",
     ];
-    $this->template->load('admin', 'bank/edit', array_merge($data, compact(['bankes', 'bank', "bank"])));
+    $this->template->load('admin', 'bank/edit', array_merge($data, compact(["bank"])));
   }
   public function delete($id, $bank = null)
   {
     $bank = $this->bank_model->first($id);
     if (!$bank || $this->input->method() !== "post") return $this->not_permition();
     $bank->delete();
-    echo json_encode(flashDataDB('success', $bank->rek . " | " . $bank->name . " berhasil dihapus!"));
+    echo json_encode(flashDataDB('success', $bank->rek . " | " . $bank->name . " Berhasil dihapus!"));
   }
   private function upload($filename = 'default.jpg')
   {

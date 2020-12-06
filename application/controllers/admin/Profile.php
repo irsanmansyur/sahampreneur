@@ -26,6 +26,7 @@ class Profile extends Admin_Controller
         )
       );
     }
+
     $this->form_validation->set_rules("name", "Name User", "required");
     if ($this->input->post("jabatan"))
       $this->form_validation->set_rules("jabatan", "User Jabatan", "required|min_length[4]");
@@ -36,9 +37,11 @@ class Profile extends Admin_Controller
       ];
       $this->template->load('admin', 'user/profile', $data);
     } else {
+      $status = (int) $this->input->post("status");
       $dt = [
         "name" => $this->input->post("name"),
-        "status" => $this->input->post("status"),
+        "status" => $status,
+        "email" => $this->input->post("email"),
       ];
 
       if ($this->input->post("jabatan")) {
@@ -52,7 +55,7 @@ class Profile extends Admin_Controller
       $dt['profile'] =  $this->upload($user->profile);
       $id = $user->id;
       $this->db->where('id', $id)->update("users", $dt);
-      $this->session->set_flashdata('success', "profile Berhasil di ubah.!");
+      $this->session->set_flashdata('success', "Profile Berhasil diubah!");
       return back();
     }
   }

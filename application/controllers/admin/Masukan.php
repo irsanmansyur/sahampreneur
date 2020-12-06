@@ -20,7 +20,13 @@ class Masukan extends Admin_Controller
     ];
     $this->template->load('admin', 'masukan/index', array_merge($data, compact(['masukans'])));
   }
-
+  public function delete($id)
+  {
+    $masukan = $this->masukan_model->first($id);
+    if (!$masukan || $this->input->method() !== "post") return $this->not_permition();
+    $masukan->delete();
+    echo json_encode(flashDataDB('success', " Berhasil dihapus!"));
+  }
   private function upload($filename = 'default.jpg')
   {
     if ($_FILES['gambar']['name']) {
