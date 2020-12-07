@@ -157,8 +157,9 @@ class Video extends Admin_Controller
   private function upload($filename = 'default.mp4')
   {
     if (isset($_FILES['video']) && $_FILES['video']['name']) {
-      $config['allowed_types'] = 'wmv|mp4|avi|mov|mkv';
+      $config['allowed_types'] = 'wmv|mp4|avi|mov|mkv|pdf';
       $config['max_size']      = '1338800';
+      $ext = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
       $config['upload_path'] = './assets/video/';
       $this->load->library('upload', $config);
       if ($this->upload->do_upload('video')) {

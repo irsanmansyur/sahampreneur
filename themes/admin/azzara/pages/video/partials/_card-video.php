@@ -1,9 +1,21 @@
 <!--Card-->
 <div class="card">
   <!--Card image-->
-  <video class="img-fluid video-here" controls playsinline muted loop>
-    <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
-  </video>
+  <div class="card-header flex align-items-center justify-content-center text-center">
+    <?php if (strpos($video->file, ".pdf") === false) : ?>
+      <!-- <video class="img-fluid video-here" controls playsinline muted loop>
+      <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
+    </video> -->
+      <span>
+        <img src="<?= base_url("assets/img/icon/video.png"); ?>" alt="" style="height:200px">
+      </span>
+    <?php else :; ?>
+      <!-- <embed src="<?= base_url("assets/video/{$video->file}") ?>" class="img-fluid video-here"> -->
+      <span>
+        <img src="<?= base_url("assets/img/icon/pdf.png"); ?>" alt="" style="height:200px">
+      </span>
+    <?php endif; ?>
+  </div>
   <!--Card content-->
   <div class="card-body">
     <!--Title-->

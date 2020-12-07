@@ -32,9 +32,18 @@
 <div class="form-group">
   <div class="row">
     <div class="col-md-5">
-      <video class="img-fluid video-here" controls playsinline muted loop>
-        <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
-      </video>
+      <?php if (strpos($video->file, ".pdf") === false) : ?>
+        <video class="img-fluid video-here" controls playsinline muted loop>
+          <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
+        </video>
+      <?php else :; ?>
+        <div class="flex align-items-center justify-content-center text-center">
+          <a href="<?= base_url("file/pdfshow/{$video->id}") ?>">
+            <img src="<?= base_url("assets/img/icon/pdf.png"); ?>" alt="" style="height:200px"><br>
+            <h2>Show File</h2>
+          </a>
+        </div>
+      <?php endif; ?>
     </div>
     <div class="col-md-7">
       <input type="file" name="video" class="change-video" id="customFile">
