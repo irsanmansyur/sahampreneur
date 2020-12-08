@@ -99,8 +99,9 @@
                 <p class="py-4"><button class="btn btn-warning">Sedang Diverifikasi</button></p>
               <?php endif; ?>
             </center>
+
           <?php endif; ?>
-          <?php if ($pembayaran->status !== "1") : ?>
+          <?php if (!$pembayaran || $pembayaran->status !== "1") : ?>
             <hr>
             <?php $this->load->view($thema_load . "components/dropzone/bootstrap.php"); ?>
           <?php endif; ?>
