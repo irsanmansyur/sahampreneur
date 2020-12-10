@@ -82,11 +82,15 @@ class Video extends Admin_Controller
 
 
     $this->form_validation->set_rules($video->getRules());
+    if (isset($_FILES['video']) && !$_FILES['video']['name'])
+      $this->form_validation->set_rules("video", "Id Video Youtube", "required|min_length[3]");
+
+
     if ($this->form_validation->run()) {
-      if (!$_FILES['video']['name']) {
-        $this->session->set_flashdata("video", "<div class='error text-danger'>Please Select Video</div>");
-        return back();
-      }
+      // if (!$_FILES['video']['name']) {
+      //   $this->session->set_flashdata("video", "<div class='error text-danger'>Please Select Video</div>");
+      //   return back();
+      // }
       $file = $this->upload();
       if (!$file)  return back();
       $video->file = $file;
@@ -170,6 +174,8 @@ class Video extends Admin_Controller
         $this->session->set_flashdata("video", "<div class='error text-danger'>{$this->upload->display_errors()}</div>");
         return false;
       }
+    } else {
+      $filename = $this->input->post("video");
     }
     return $filename;
   }

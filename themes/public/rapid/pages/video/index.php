@@ -19,9 +19,10 @@
           <div class="card">
             <!--Card image-->
             <?php if (isset($video->title)) : ?>
-              <video x-ref="videoShow" x-show="isVideo" controlsList="nodownload" class="img-fluid video-here" controls id="videoPlay" data-current="video<?= $video->id; ?>">
-                <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
-              </video>
+              <div x-show="isVideo" class="embed-responsive embed-responsive-16by9" data-current="video<?= $video->id; ?>">
+                <iframe x-ref="videoShow" id="videoPlay" class="youtube-video embed-responsive-item" src="https://www.youtube.com/embed/<?= $video->file; ?>?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen></iframe>
+              </div>
+
               <div x-show="!isVideo" class="flex align-items-center justify-content-center text-center">
                 <button x-ref="pdfShow" hrefe="" @click="window.open($refs.pdfShow.getAttribute('hrefe'))">
                   <span>
@@ -58,7 +59,7 @@
                   <ul class="list-group">
                     <?php foreach ($kategori->videos() as $video) : ?>
                       <?php if (strpos($video->file, ".pdf") === false) : ?>
-                        <a id="video<?= $video->id; ?>" data-start="0" class="video-select list-group-item d-flex align-items-center" href="#videoPlay" data-url="<?= base_url("assets/video/{$video->file}"); ?>" @click="isPlay = <?= $video->id; ?>;isVideo=true">
+                        <a id="video<?= $video->id; ?>" data-start="0" class="video-select list-group-item d-flex align-items-center" href="#" data-frame="<?= "https://www.youtube.com/embed/{$video->file}?rel=0"; ?>" @click="isPlay = <?= $video->id; ?>;isVideo=true;$refs.videoShow.setAttribute('src','<?= "https://www.youtube.com/embed/{$video->file}?enablejsapi=1&version=3&playerapiid=ytplayer"; ?>');playVideo($refs.videoShow)">
                           <svg x-show="isPlay == <?= $video->id; ?> && isVideo" style="width:25px;height:30px" class="mr-3" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg">
                             <rect y="10" width="15" height="120" rx="6">
                               <animate attributeName="height" begin="0.5s" dur="2s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"></animate>
@@ -85,7 +86,7 @@
                           <?= $video->title; ?>
                         </a>
                       <?php else :; ?>
-                        <button class="list-group-item d-flex align-items-center" @click="$refs.videoShow.pause();$refs.pdfShow.setAttribute('hrefe','<?= base_url("file/pdfshow/{$video->id}") ?>');isVideo=false">
+                        <button class="list-group-item d-flex align-items-center" @click="stopVideo($refs.videoShow);$refs.pdfShow.setAttribute('hrefe','<?= base_url("file/pdfshow/{$video->id}") ?>');isVideo=false">
                           <img src="<?= base_url("assets/img/icon/pdf.png"); ?>" class="rounded rounded-cirle mr-2" style="width: 30px;height:30px;">
                           <?= $video->title; ?>
                         </button>
@@ -115,15 +116,15 @@
   <div id="preloader"></div>
 
   <?php $this->load->view($thema_load . "components/js_library.php"); ?>
-  <script src="<?= $thema_folder . "pages/video/partials/main.js"; ?>"></script>
+  <!-- <script src="<?= $thema_folder . "pages/video/partials/main.js"; ?>"></script> -->
   <script>
-    let myVideo = document.querySelector("#videoPlay");
-    myVideo.addEventListener("click", function() {
-      let idV = parseInt(myVideo.dataset.current.replace("video", ""));
-      if (myVideo.paused) {
-        isPlay = idV;
-      }
-    })
+    var stopVideo = function(element) {
+      $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    };
+
+    function playVideo(element) {
+      $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+    }
   </script>
 </body>
 

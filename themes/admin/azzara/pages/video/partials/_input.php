@@ -29,26 +29,61 @@
   <input type="number" class="form-control" id="no_urut" placeholder="Enter No. Urut Video" name="no_urut" value="<?= set_value("no_urut", null) ?? $video->no_urut ?>">
   <?= form_error("no_urut", "<div class='danger text-danger'>", "</div>"); ?>
 </div>
+<div class="form-check">
+  <label>Pilih Video atau Pdf</label><br>
+  <label class="form-radio-label">
+    <input class="form-radio-input" type="radio" name="optionsRadios" value="video" checked="">
+    <span class="form-radio-sign">Video</span>
+  </label>
+  <label class="form-radio-label ml-3">
+    <input class="form-radio-input" type="radio" name="optionsRadios" value="pdf">
+    <span class="form-radio-sign">Pdf</span>
+  </label>
+</div>
+
 <div class="form-group">
-  <div class="row">
-    <div class="col-md-5">
-      <?php if (strpos($video->file, ".pdf") === false) : ?>
-        <video class="img-fluid video-here" controls playsinline muted loop>
-          <source src="<?= base_url("assets/video/{$video->file}"); ?>" type="video/mp4">
-        </video>
-      <?php else :; ?>
-        <div class="flex align-items-center justify-content-center text-center">
-          <a href="<?= base_url("file/pdfshow/{$video->id}") ?>">
-            <img src="<?= base_url("assets/img/icon/pdf.png"); ?>" alt="" style="height:200px"><br>
-            <h2>Show File</h2>
-          </a>
-        </div>
-      <?php endif; ?>
+  <div class="col-md-7">
+    <div class="" id="vid-input">
+      <input type="text" name="video" class="form-control" placeholder="Id Video Youtube" value="<?= set_value("video", null) ?? @$video->file; ?>" id="video-inp">
+      <?= form_error("video", "<div class='danger text-danger'>", "</div>"); ?>
+
     </div>
-    <div class="col-md-7">
+    <div class="form-group d-none" id="pdf-upload">
       <input type="file" name="video" class="change-video" id="customFile">
-      <label class="custom-file-label" for="customFile">Choose file</label>
+      <label class="custom-file-label" for="customFile">Pilih Pdf</label>
     </div>
   </div>
-  <?= $this->session->flashdata("video"); ?>
+
 </div>
+<?= $this->session->flashdata("video"); ?>
+</div>
+
+<script>
+  var radios = document.getElementsByName('optionsRadios');
+
+  for (var i = 0, length = radios.length; i < length; i++) {
+    radios[i].addEventListener("change", (e) => {
+      radioSelected(e.target);
+    })
+    if (radios[i].checked) {
+      radioSelected(radios[i]);
+    }
+
+
+  }
+
+  function radioSelected(radio) {
+    if (radio.value === "pdf") {
+      document.querySelector("#vid-input").classList.add("d-none");
+
+      document.querySelector("#pdf-upload").classList.remove("d-none");
+      document.querySelector("#video-inp").disabled = true;
+      document.querySelector("#customFile").disabled = false;
+    } else {
+      document.querySelector("#pdf-upload").classList.add("d-none");
+      document.querySelector("#vid-input").classList.remove("d-none");
+      document.querySelector("#video-inp").disabled = false;
+      document.querySelector("#customFile").disabled = true;
+    }
+  }
+</script>
