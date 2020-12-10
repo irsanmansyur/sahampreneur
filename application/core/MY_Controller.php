@@ -40,7 +40,7 @@ class MY_Controller extends CI_Controller
     $data = [
       'route' => compact(['Controller', 'Method', 'Directory']),
       'title' => "Selamat Datang!",
-      'page_description' => "Ini adalah Description Default, Selamat Datang!.!",
+      'page_description' => "Yuk Belajar dan Cuan Bareng Sahampreneur !",
       "page_title" => "Selamat Datang! di super admin ci 3, anda berada di Controller $Controller dan method $Method"
     ];
     return $data;
