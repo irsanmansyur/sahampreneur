@@ -37,6 +37,12 @@
 <iframe src="https://drive.google.com/file/d/1REN5TpjlUgpyNP87oFINFgGSjK9mTqiN/preview" width="640" height="480" allow="fullscreen" frameborder="0" scrolling="no" seamless=""> </iframe>
       <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;"> </div>
 </div>
+
+<div  style="width: 640px; height: 480px; position: relative;">
+
+<iframe src="https://drive.google.com/file/d/1REN5TpjlUgpyNP87oFINFgGSjK9mTqiN/preview" width="640" height="480" allow="fullscreen" frameborder="0" scrolling="no" seamless=""> </iframe>
+      <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;"> </div>
+</div>
             <!-- <ul>
               <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
               <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
