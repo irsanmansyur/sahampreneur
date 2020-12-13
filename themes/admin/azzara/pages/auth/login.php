@@ -36,7 +36,7 @@
   <div class="wrapper wrapper-login flex-column">
 
     <div class="container text-center">
-      <img src="/assets/img/logo/sahampreneur.png" alt="" class="img-fluid" style="padding: 0;margin-top: -20px;max-height: 91px;">
+      <img src="/assets/img/logo/sahampreneur1.png" alt="" class="img-fluid" style="padding: 0;margin-top: -20px;max-height: 91px;">
     </div>
     <div class="container container-login animated fadeIn">
       <div class="d-flex align-items-center">

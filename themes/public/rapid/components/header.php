@@ -6,7 +6,7 @@
     <div class="logo float-left">
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="text-light"><a href="#intro" class="scrollto"><span>Sahampreneur</span></a></h1> -->
-      <a class="scrollto"><img src="/assets/img/logo/sahampreneur.png" alt="" class="img-fluid" style="padding: 0;margin-top: -20px;max-height: 91px;"></a>
+      <a class="scrollto"><img src="/assets/img/logo/sahampreneu1.png" alt="" class="img-fluid" style="padding: 0;margin-top: -20px;max-height: 91px;"></a>
     </div>
 
     <nav class="main-nav float-right d-none d-lg-block">

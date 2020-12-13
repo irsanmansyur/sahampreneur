@@ -10,8 +10,8 @@
   <meta content="<?= @$page_description; ?>" name="description">
 
   <!-- Favicons -->
-  <link src="<?= $thema_folder; ?>assets/img/sahampreneur.png" rel="icon">
-  <link src="<?= $thema_folder; ?>assets/img/sahampreneur.png" rel="apple-touch-icon">
+  <link src="<?= $thema_folder; ?>assets/img/sahampreneur1.png" rel="icon">
+  <link src="<?= $thema_folder; ?>assets/img/sahampreneur1.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
