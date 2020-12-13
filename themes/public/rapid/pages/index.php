@@ -10,7 +10,7 @@
   <meta content="<?= @$page_description; ?>" name="description">
 
   <!-- Favicons -->
-  <link src="<?= $thema_folder; ?>assets/img/sahampreneur1.png" rel="icon">
+  <link src="<?= $thema_folder; ?>assets/img/sahampreneur.png" rel="icon">
   <link src="<?= $thema_folder; ?>assets/img/sahampreneur.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
