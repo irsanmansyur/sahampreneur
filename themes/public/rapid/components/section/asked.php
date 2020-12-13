@@ -97,6 +97,6 @@
         </li> -->
 
       </ul>
-      <iframe src="https://drive.google.com/file/d/14_6uKfATAvc80xMCJwc32uTq5dx_IOy2/preview" width="640" height="480"></iframe>
+
     </div>
   </section><!-- #faq -->
