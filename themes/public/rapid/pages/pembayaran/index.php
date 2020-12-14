@@ -17,7 +17,7 @@
             <div class="row">
               <div class="col">
                 <a target="_blank" href="<?= base_url(); ?>">
-                  <img style="height: 105px" src="<?= base_url("assets/img/logo/sahampreneur.png"); ?>" data-holder-rendered="true" />
+                  <img style="height: 105px" src="<?= base_url("assets/img/logo/sahampreneur1.png"); ?>" data-holder-rendered="true" />
                 </a>
               </div>
               <div class="col company-details">
