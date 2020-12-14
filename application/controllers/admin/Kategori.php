@@ -5,6 +5,8 @@ class Kategori extends Admin_Controller
   function __construct()
   {
     parent::__construct();
+    if (!in_role("Admin"))
+      redirect(base_url());
     $this->load->library('form_validation');
     $this->load->model('kategori_model');
   }

@@ -22,6 +22,8 @@ class Why_us extends Admin_Controller
   public function __construct()
   {
     parent::__construct();
+    if (!in_role("Admin"))
+      redirect(base_url());
     $this->load->model(["why_us_model"]);
     $this->load->library("form_validation");
   }

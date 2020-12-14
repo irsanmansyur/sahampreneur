@@ -58,7 +58,8 @@ class User extends Admin_Controller
   }
   public function list()
   {
-    in_role([1, 2]);
+    if (!in_role("Admin"))
+      redirect(base_url());
     $this->db->select("users.*,rules.name as name_rules")
       ->where_not_in("users.id", [1, 2]);
     $this->db->join('access_role_user', 'access_role_user.user_id = users.id')
@@ -113,6 +114,8 @@ class User extends Admin_Controller
   }
   function edit($id)
   {
+    if (!in_role("Admin"))
+      redirect(base_url());
     $user = $this->user_model->getUserEdit($id);
 
     $rules = $this->db->from("rules")->where_not_in("id", [1])->get()->result();
@@ -178,6 +181,8 @@ class User extends Admin_Controller
 
   public function delete($id, $bank = null)
   {
+    if (!in_role("Admin"))
+      redirect(base_url());
     $user = $this->user_model->first($id);
 
     if (!$user || $this->input->method() != "post") {

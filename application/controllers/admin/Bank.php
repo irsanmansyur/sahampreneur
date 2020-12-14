@@ -6,9 +6,8 @@ class Bank extends Admin_Controller
   {
     parent::__construct();
 
-    if (!in_role("Admin")) {
-      return $this->not_permition();
-    }
+    if (!in_role("Admin"))
+      redirect(base_url());
     $this->load->library('form_validation');
     $this->load->model('bank_model');
   }

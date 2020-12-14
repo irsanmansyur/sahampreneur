@@ -6,7 +6,7 @@ class Testimonial extends Admin_Controller
   {
     parent::__construct();
     if (!in_role("Admin"))
-      return $this->not_permition();
+      redirect(base_url());
     $this->load->library('form_validation');
     $this->load->model(['testimonial_model', "user_model"]);
   }

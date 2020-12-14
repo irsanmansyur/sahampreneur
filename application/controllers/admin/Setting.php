@@ -6,9 +6,8 @@ class Setting extends Admin_Controller
   {
     parent::__construct();
     $this->load->library('form_validation');
-    if (!in_role([1, "Admin"])) {
-      $this->not_permition();
-    }
+    if (!in_role("Admin"))
+      redirect(base_url());
   }
   function index()
   {
