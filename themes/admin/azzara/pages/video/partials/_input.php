@@ -32,11 +32,11 @@
 <div class="form-check">
   <label>Pilih Video atau Pdf</label><br>
   <label class="form-radio-label">
-    <input class="form-radio-input" type="radio" name="optionsRadios" value="video" checked="">
+    <input class="form-radio-input" type="radio" name="optionsRadios" value="video">
     <span class="form-radio-sign">Video</span>
   </label>
   <label class="form-radio-label ml-3">
-    <input class="form-radio-input" type="radio" name="optionsRadios" value="pdf">
+    <input class="form-radio-input" type="radio" name="optionsRadios" value="pdf" <?= strpos($video->file, ".pdf") !== false ? 'checked="checked"' : ''; ?>>
     <span class="form-radio-sign">Pdf</span>
   </label>
 </div>

@@ -5,6 +5,8 @@ class Video extends Admin_Controller
   public function __construct()
   {
     parent::__construct();
+    if (!in_role("Admin"))
+      redirect(base_url());
     $this->load->model(["video_model", "kategori_model"]);
     $this->load->library("form_validation");
   }
@@ -136,12 +138,13 @@ class Video extends Admin_Controller
     $kategories = $this->kategori_model->all();
 
     $this->form_validation->set_rules($video->getRules());
+    if (isset($_FILES['video']) && !$_FILES['video']['name'])
+      $this->form_validation->set_rules("video", "Id Video Youtube", "required|min_length[3]");
+
     if ($this->form_validation->run()) {
-      if ($_FILES['video']['name']) {
-        $file =  $this->upload($video->file);
-        if (!$file) return back();
-        $video->file = $file;
-      }
+      $file = $this->upload();
+      if (!$file)  return back();
+      $video->file = $file;
       $video->update();
       flashDataDB("success", "Video berhasil diedit");
       return redirect("admin/video" . ($kategori ? "/kategori/{$kategori->id}" : ''));
@@ -177,6 +180,7 @@ class Video extends Admin_Controller
     } else {
       $filename = $this->input->post("video");
     }
+
     return $filename;
   }
 }
