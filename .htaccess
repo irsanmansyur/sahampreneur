@@ -6,3 +6,6 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 RewriteCond %{HTTPS} off
  
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_URI} !\.(?:css|js)$ [NC]
+RewriteRule ^assets/ - [L,F] 
