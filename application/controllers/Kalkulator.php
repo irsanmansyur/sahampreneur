@@ -109,7 +109,7 @@ class Kalkulator extends MY_Controller
       }
       $discountedValue = $cashFlowth * $discountFactor;
       $year10 += $discountedValue;
-      $years[$currentYear + $i] = [
+      $years[$currentYear + $i + 1] = [
         'cashflow' =>  $cashFlowth,
         'discountFactor' => number_format($discountFactor, 2),
         'discountedValue' => $discountedValue,
